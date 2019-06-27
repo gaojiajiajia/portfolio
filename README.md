@@ -9,4 +9,4 @@ and start a local http server with
 python -m SimpleHTTPServer 8080
 ```
 
-The site will load at `http://localhost:8080`.
+The site will load at http://localhost:8080.
