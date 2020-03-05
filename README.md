@@ -5,8 +5,16 @@
 Open a terminal window in the project root directory
 and start a local http server with
 
+On macOS
+
 ```
 python -m SimpleHTTPServer 8080
+```
+
+On Windows
+
+```
+python -m http.server 8080
 ```
 
 The site will load at http://localhost:8080.
