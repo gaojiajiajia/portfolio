@@ -18,3 +18,14 @@ python -m http.server 8080
 ```
 
 The site will load at http://localhost:8080.
+
+## Full Development Env
+
+Requires [Node.js].
+
+```
+npm install
+npm start
+```
+
+[Node.js]: https://nodejs.org/

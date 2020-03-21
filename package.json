@@ -1,0 +1,20 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write **/*.html **/*.css **/*.js",
+    "start": "http-server -p 8080 -i false -d false"
+  },
+  "repository": "gaojiajiajia/portfolio",
+  "author": "Jia Gao <carmenmen851004@gmail.com>",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "bugs": {
+    "url": "https://github.com/gaojiajiajia/portfolio/issues"
+  },
+  "homepage": "https://gaojiajiajia.com/",
+  "dependencies": {
+    "http-server": "^0.12.1",
+    "prettier": "^1.19.1"
+  }
+}
