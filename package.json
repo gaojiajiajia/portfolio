@@ -15,12 +15,7 @@
   "homepage": "https://gaojiajiajia.com/",
   "prettier": {
     "semi": false,
-    "endOfLine": "lf",
-    "cli": {
-      "ignore": [
-        "*.min.*"
-      ]
-    }
+    "endOfLine": "lf"
   },
   "dependencies": {
     "http-server": "^0.12.1",
