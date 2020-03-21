@@ -1,104 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>jQuery Mobile</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery Mobile</title>
 
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
 
-	<link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
-	<link rel="stylesheet" href="css/app.css">
+    <link
+      rel="stylesheet"
+      href="lib/css/jquery.mobile.structure-1.4.5.min.css"
+    />
+    <link rel="stylesheet" href="css/app.css" />
 
-	<script src="lib/js/jquery-2.2.4.min.js"></script>
-	<script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
-	<script src="js/app.js"></script>
-</head>
-<body>
-
-	<!-- LOGIN PAGE -->
-	<section data-role="page" id="page-login">
-		<!-- <header data-role="header">
+    <script src="lib/js/jquery-2.2.4.min.js"></script>
+    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+    <!-- LOGIN PAGE -->
+    <section data-role="page" id="page-login">
+      <!-- <header data-role="header">
 			<h1>Login</h1>
 		</header> -->
-		<div data-role="main" color="yellow">
-			<h2>This is a login page</h2>
+      <div data-role="main" color="yellow">
+        <h2>This is a login page</h2>
 
-			<p><a href="#page-map">Login</a></p>
-		</div>
-		<!-- <footer data-role="footer">
+        <p><a href="#page-map">Login</a></p>
+      </div>
+      <!-- <footer data-role="footer">
 			<h1>Navigation</h1>
 		</footer> -->
-	</section>
+    </section>
 
+    <!-- MAP PAGE -->
+    <section data-role="page" id="page-map">
+      <header data-role="header">
+        <h1>Map Page</h1>
+        <ul class="nav flex-parent">
+          <li class="flex-none"><a href="">back</a></li>
+          <li class="flex-child"></li>
+          <li class="flex-none"><a href="">edit</a></li>
+        </ul>
+      </header>
+      <div data-role="main">
+        <h2>This is a map page</h2>
+        <p>It's ok.</p>
+      </div>
+      <footer data-role="footer">
+        <ul class="nav flex-parent" style="text-align:center">
+          <!-- li*3>a -->
+          <li class="flex-child"><a href="#page-map">Map</a></li>
+          <li class="flex-child"><a href="#page-list">List</a></li>
+          <li class="flex-child"><a href="#page-profile">Profile</a></li>
+        </ul>
+      </footer>
+    </section>
 
-	<!-- MAP PAGE -->
-	<section data-role="page" id="page-map">
-		<header data-role="header">
-			<h1>Map Page</h1>
-			<ul class="nav flex-parent">
-				<li class="flex-none"><a href="">back</a></li>
-				<li class="flex-child"></li>
-				<li class="flex-none"><a href="">edit</a></li>
-			</ul>
-		</header>
-		<div data-role="main">
-			<h2>This is a map page</h2>
-			<p>It's ok.</p>
-		</div>
-		<footer data-role="footer">
-			<ul class="nav flex-parent" style="text-align:center">
-				<!-- li*3>a -->
-				<li class="flex-child"><a href="#page-map">Map</a></li>
-				<li class="flex-child"><a href="#page-list">List</a></li>
-				<li class="flex-child"><a href="#page-profile">Profile</a></li>
-			</ul>
-		</footer>
-	</section>
+    <!-- LIST PAGE -->
+    <section data-role="page" id="page-list">
+      <header data-role="header">
+        <h1>List Page</h1>
+        <ul class="nav flex-parent">
+          <li class="flex-child"></li>
+          <li class="flex-none"><a href="">Add</a></li>
+        </ul>
+      </header>
+      <div data-role="main">
+        <!-- p*6>lorem50 -->
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Reprehenderit autem a ipsum molestias natus laborum id accusantium
+          veritatis quaerat aliquid dolore magni nobis dolorum ullam debitis
+          similique, magnam optio voluptatibus incidunt tenetur officiis.
+          Explicabo dicta nesciunt nobis aperiam quam laborum dolore, quidem
+          quaerat ipsum cumque rem! Debitis nam ipsa architecto.
+        </p>
+        <p>
+          Consequuntur ut id quo illum dolorum doloribus nemo neque, quasi eos
+          numquam quae, quia minima ex reiciendis praesentium. Dolorum saepe
+          atque labore, debitis! Ratione sint corporis debitis, iure totam
+          repellendus dolor qui dolorum eos natus, aspernatur voluptas tenetur
+          id rem labore nihil laboriosam doloremque molestias quos! Voluptatibus
+          labore itaque placeat.
+        </p>
+        <p>
+          Eos blanditiis ducimus sequi minima vitae illum molestiae ea eum, eius
+          fugiat, voluptate itaque praesentium quis placeat! Laudantium iusto
+          rerum quis sapiente sed aut. Saepe quos rem natus sint nesciunt
+          nostrum ab cum voluptate cupiditate architecto sit ipsa at, iste
+          repudiandae non porro nam quia fuga, voluptates. Distinctio, vero,
+          officia!
+        </p>
+        <p>
+          Libero ipsam minus dicta eum praesentium mollitia repudiandae aut
+          dolore explicabo illo similique distinctio, in, itaque odio quod
+          repellendus illum quo. Nihil optio, officia repellendus doloribus
+          veniam sunt sequi consectetur. Ipsam incidunt maxime dolor provident
+          obcaecati, voluptatibus corporis sit, fuga, cupiditate ullam saepe
+          atque. Sapiente ex, placeat non eos nobis!
+        </p>
+        <p>
+          Doloremque expedita impedit voluptatem placeat aliquid eum, inventore
+          accusantium molestias ut quasi mollitia dignissimos, libero quos
+          aperiam, maxime ex minima. Tempora aperiam molestiae ea tenetur soluta
+          nobis, consectetur, perferendis, minima nam, sequi perspiciatis sint
+          maiores modi omnis accusantium consequuntur ut veniam sit praesentium
+          cumque voluptatum iste quibusdam qui. Illo, adipisci?
+        </p>
+        <p>
+          Non facilis nam, rerum, accusamus, sed sit nostrum aperiam error,
+          repudiandae soluta reiciendis. Quia consequuntur sit dolores,
+          reiciendis inventore vitae sunt iste ullam facilis libero, quidem
+          magni excepturi illo laborum ab recusandae. Voluptates dignissimos,
+          mollitia, totam praesentium, tempora facilis recusandae, consectetur
+          iusto debitis autem id! Totam architecto nam quidem odit!
+        </p>
+      </div>
+      <footer data-role="footer">
+        <ul class="nav flex-parent" style="text-align:center">
+          <!-- li*3>a -->
+          <li class="flex-child"><a href="#page-map">Map</a></li>
+          <li class="flex-child"><a href="#page-list">List</a></li>
+          <li class="flex-child"><a href="#page-profile">Profile</a></li>
+        </ul>
+      </footer>
+    </section>
 
+    <!-- PROFILE PAGE -->
+    <section data-role="page" id="page-profile">
+      <header data-role="header">
+        <h1>Profile Page</h1>
+        <ul class="nav flex-parent">
+          <li class="flex-none"><a href="#back" data-rel="back">Back</a></li>
+        </ul>
+      </header>
+      <div data-role="main">
+        This a profile
 
-	<!-- LIST PAGE -->
-	<section data-role="page" id="page-list">
-		<header data-role="header">
-			<h1>List Page</h1>
-			<ul class="nav flex-parent">
-				<li class="flex-child"></li>
-				<li class="flex-none"><a href="">Add</a></li>
-			</ul>
-		</header>
-		<div data-role="main">
-			<!-- p*6>lorem50 -->
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit autem a ipsum molestias natus laborum id accusantium veritatis quaerat aliquid dolore magni nobis dolorum ullam debitis similique, magnam optio voluptatibus incidunt tenetur officiis. Explicabo dicta nesciunt nobis aperiam quam laborum dolore, quidem quaerat ipsum cumque rem! Debitis nam ipsa architecto.</p>
-			<p>Consequuntur ut id quo illum dolorum doloribus nemo neque, quasi eos numquam quae, quia minima ex reiciendis praesentium. Dolorum saepe atque labore, debitis! Ratione sint corporis debitis, iure totam repellendus dolor qui dolorum eos natus, aspernatur voluptas tenetur id rem labore nihil laboriosam doloremque molestias quos! Voluptatibus labore itaque placeat.</p>
-			<p>Eos blanditiis ducimus sequi minima vitae illum molestiae ea eum, eius fugiat, voluptate itaque praesentium quis placeat! Laudantium iusto rerum quis sapiente sed aut. Saepe quos rem natus sint nesciunt nostrum ab cum voluptate cupiditate architecto sit ipsa at, iste repudiandae non porro nam quia fuga, voluptates. Distinctio, vero, officia!</p>
-			<p>Libero ipsam minus dicta eum praesentium mollitia repudiandae aut dolore explicabo illo similique distinctio, in, itaque odio quod repellendus illum quo. Nihil optio, officia repellendus doloribus veniam sunt sequi consectetur. Ipsam incidunt maxime dolor provident obcaecati, voluptatibus corporis sit, fuga, cupiditate ullam saepe atque. Sapiente ex, placeat non eos nobis!</p>
-			<p>Doloremque expedita impedit voluptatem placeat aliquid eum, inventore accusantium molestias ut quasi mollitia dignissimos, libero quos aperiam, maxime ex minima. Tempora aperiam molestiae ea tenetur soluta nobis, consectetur, perferendis, minima nam, sequi perspiciatis sint maiores modi omnis accusantium consequuntur ut veniam sit praesentium cumque voluptatum iste quibusdam qui. Illo, adipisci?</p>
-			<p>Non facilis nam, rerum, accusamus, sed sit nostrum aperiam error, repudiandae soluta reiciendis. Quia consequuntur sit dolores, reiciendis inventore vitae sunt iste ullam facilis libero, quidem magni excepturi illo laborum ab recusandae. Voluptates dignissimos, mollitia, totam praesentium, tempora facilis recusandae, consectetur iusto debitis autem id! Totam architecto nam quidem odit!</p>
-		</div>
-		<footer data-role="footer">
-			<ul class="nav flex-parent" style="text-align:center">
-				<!-- li*3>a -->
-				<li class="flex-child"><a href="#page-map">Map</a></li>
-				<li class="flex-child"><a href="#page-list">List</a></li>
-				<li class="flex-child"><a href="#page-profile">Profile</a></li>
-			</ul>
-		</footer>
-	</section>
-
-
-	<!-- PROFILE PAGE -->
-	<section data-role="page" id="page-profile">
-		<header data-role="header">
-			<h1>Profile Page</h1>
-			<ul class="nav flex-parent">
-				<li class="flex-none"><a href="#back" data-rel="back">Back</a></li>
-			</ul>
-		</header>
-		<div data-role="main">
-			This a profile
-
-			<p><a href="#page-login">Logout</a></p>
-		</div>
-	</section>
-	
-</body>
+        <p><a href="#page-login">Logout</a></p>
+      </div>
+    </section>
+  </body>
 </html>

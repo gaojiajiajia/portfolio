@@ -1,136 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Chase Cute</title>
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css?family=open sans" rel="stylesheet">
-	<link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
-	<link rel="stylesheet" href="css/app.css">
-	<script src="lib/js/jquery-2.2.4.min.js"></script>
-	<script src="lib/js/apptools.js"></script>
-	<script src="js/app.js"></script>
-	<script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8erqiFPDLjaL0jG_EXnAR_Zlf72RDEb8"
-    async defer></script>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chase Cute</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=open sans"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="lib/css/jquery.mobile.structure-1.4.5.min.css"
+    />
+    <link rel="stylesheet" href="css/app.css" />
+    <script src="lib/js/jquery-2.2.4.min.js"></script>
+    <script src="lib/js/apptools.js"></script>
+    <script src="js/app.js"></script>
+    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8erqiFPDLjaL0jG_EXnAR_Zlf72RDEb8"
+      async
+      defer
+    ></script>
+  </head>
+  <body>
+    <!-- Login page -->
+    <section data-role="page" id="login-page">
+      <div data-role="login">
+        <form id="login-form" class="centered-child" data-role="none">
+          <div class="centered-text logo">
+            <img class="signin-logo" src="img/logo.png" alt="" />
+          </div>
 
-</head>
-<body>
+          <div class="form-control">
+            <!-- 					<label class="haha">user0</label> -->
+            <input
+              type="text"
+              id="login-username"
+              placeholder="Username"
+              data-role="none"
+            />
+          </div>
+          <div class="form-control">
+            <!-- 					<label class="haha">pass</label> -->
+            <input
+              type="password"
+              id="login-password"
+              placeholder="Password"
+              data-role="none"
+            />
+          </div>
+          <div class="form-control btn-login">
+            <input
+              type="submit"
+              class="btn-text"
+              value="LOGIN"
+              data-role="none"
+            />
+          </div>
+          <div class="form-control link-register">
+            <a href="#" id="register" class="btn-text2">REGISTER</a>
+          </div>
+          <div class="form-control centered-text">
+            <a class="link-reset">Forgot password?</a>
+          </div>
+        </form>
+      </div>
+    </section>
 
-<!-- Login page -->
-	<section data-role="page" id="login-page">
-		<div data-role="login">
-			<form id="login-form" class="centered-child" data-role="none">
-				<div class="centered-text logo">
-					<img class="signin-logo" src="img/logo.png" alt="">
-				</div>
-				
-				<div class="form-control">
-<!-- 					<label class="haha">user0</label> -->
-					<input type="text" id="login-username" placeholder="Username" data-role="none">
-				</div>
-				<div class="form-control">
-<!-- 					<label class="haha">pass</label> -->
-					<input type="password" id="login-password" placeholder="Password" data-role="none">
-				</div>
-				<div class="form-control btn-login">
-					<input type="submit" class="btn-text" value="LOGIN" data-role="none">
-				</div>
-				<div class="form-control link-register">
-					<a href="#" id="register" class="btn-text2">REGISTER</a>
-				</div>
-				<div class="form-control centered-text">
-					<a class="link-reset">Forgot password?</a>
-				</div>
-			</form>
-		</div>
-	</section>
+    <!-- Map -->
+    <section data-role="page" id="map-page">
+      <footer data-role="footer" data-template="#footer-template"></footer>
+      <div data-role="main">
+        <div class="map"></div>
+      </div>
+    </section>
 
-<!-- Map -->
-	<section data-role="page" id="map-page">
-		<footer data-role="footer" data-template="#footer-template"></footer>
-		<div data-role="main">
-			<div class="map"></div>
-		</div>
-	</section>
+    <!-- Animal List -->
+    <section data-role="page" id="list-page">
+      <header data-role="header" style="color:white;">
+        <h1>Animals</h1>
+        <div class="btn-row">
+          <ul>
+            <li></li>
+            <li><a href="#" data-activate="#add-animal-list-modal">+</a></li>
+          </ul>
+        </div>
+      </header>
+      <footer data-role="footer" data-template="#footer-template"></footer>
+      <div data-role="main">
+        <div class="flex-parent flex-vertical fill-parent">
+          <div class="flex-none">
+            <div class="search-box">
+              <input
+                type="search"
+                class="top-search"
+                id="list-search"
+                data-role="none"
+                placeholder="Search"
+              />
+            </div>
+          </div>
+          <div class="flex-none list-filter">
+            <!-- <span class="js-list-filter" data-filter="type" data-value=""><img src="img/icon-filter.png" alt="" class="filter-icon"></span> -->
+            <span class="js-list-filter" data-filter="type" data-value="dog"
+              ><img src="img/dog.png" class="filter-icon"
+            /></span>
+            <span class="js-list-filter" data-filter="type" data-value="cat"
+              ><img src="img/cat.png" class="filter-icon"
+            /></span>
+            <span class="js-list-filter" data-filter="type" data-value="rabbit"
+              ><img src="img/rabbit.png" class="filter-icon"
+            /></span>
+          </div>
+          <div class="flex-child scrolley">
+            <div class="animallist"></div>
+          </div>
+        </div>
+      </div>
 
-<!-- Animal List -->
-	<section data-role="page" id="list-page">
-		<header data-role="header" style="color:white;">
-			<h1>Animals</h1>
-			<div class="btn-row">
-				<ul>
-					<li></li>
-					<li><a href="#" data-activate="#add-animal-list-modal">+</a></li>
-				</ul>
-			</div>
-		</header>
-		<footer data-role="footer" data-template="#footer-template"></footer>
-		<div data-role="main">
-			<div class="flex-parent flex-vertical fill-parent">
-				<div class="flex-none">
-					<div class="search-box">
-						<input type="search" class="top-search" id="list-search" data-role="none" placeholder="Search">
-					</div>
-				</div>
-				<div class="flex-none list-filter">
-					<!-- <span class="js-list-filter" data-filter="type" data-value=""><img src="img/icon-filter.png" alt="" class="filter-icon"></span> -->
-					<span class="js-list-filter" data-filter="type" data-value="dog"><img src="img/dog.png" class="filter-icon"></span>
-					<span class="js-list-filter" data-filter="type" data-value="cat"><img src="img/cat.png" class="filter-icon"></span>
-					<span class="js-list-filter" data-filter="type" data-value="rabbit"><img src="img/rabbit.png" class="filter-icon"></span>
-				</div>
-				<div class="flex-child scrolley">
-					<div class="animallist"></div>
-				</div>
-			</div>
-		</div>
+      <div class="modal" id="add-animal-list-modal">
+        <div class="modal-back" data-deactivate="#add-animal-list-modal"></div>
+        <form class="modal-content" id="add-animal-list-form" data-role="none">
+          <div class="modal-head">
+            <div class="flex-parent flex-center">
+              <div class="flex-none">
+                <a
+                  href="#"
+                  class="btn"
+                  style="color:#ffffff;"
+                  data-deactivate="#add-animal-list-modal"
+                  >Cancel</a
+                >
+              </div>
+              <div class="flex-child" style="text-align:center; color: white;">
+                Add Animal
+              </div>
+              <div class="flex-none">
+                <input
+                  type="submit"
+                  class="btn-form-add"
+                  value="Add"
+                  data-role="none"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div>
+              <label class="imagepicker imagepicker-replace thumbnail">
+                <input
+                  type="file"
+                  id="add-animal-list-imagepicker"
+                  multiple
+                  data-role="none"
+                />
+              </label>
+            </div>
+            <div class="form-control">
+              <label for="add-animal-list-name">Name</label>
+              <input
+                type="text"
+                id="add-animal-list-name"
+                data-role="none"
+                class="form-input"
+              />
+            </div>
+            <div class="form-control">
+              <label for="add-animal-list-type">Type</label>
 
-		<div class="modal" id="add-animal-list-modal">
-			<div class="modal-back" data-deactivate="#add-animal-list-modal"></div>
-			<form class="modal-content" id="add-animal-list-form" data-role="none">
-				<div class="modal-head">
-
-					<div class="flex-parent flex-center">
-						<div class="flex-none">
-							<a href="#" class="btn"  style="color:#ffffff;" data-deactivate="#add-animal-list-modal">Cancel</a>
-						</div>
-						<div class="flex-child" style="text-align:center; color: white;">
-							Add Animal
-						</div>
-						<div class="flex-none">
-							<input type="submit" class="btn-form-add" value="Add" data-role="none">
-						</div>
-					</div>
-				</div>
-				<div class="modal-body">
-					<div>
-					    <label class="imagepicker imagepicker-replace thumbnail">
-					      <input type='file' id="add-animal-list-imagepicker" multiple data-role="none">
-					    </label>
-					</div>
-					<div class="form-control">
-						<label for="add-animal-list-name">Name</label>
-						<input type="text" id="add-animal-list-name" data-role="none" class="form-input">
-					</div>
-					<div class="form-control">
-						<label for="add-animal-list-type">Type</label>
-						
-						<div class="select-parent">
-							<select data-role="none" class="form-select" id="add-animal-list-type">
-								<option value="dog">dog</option>
-								<option value="cat">cat</option>
-								<option value="rabbit">rabbit</option>
-							</select>
-						</div>
-						
-					</div>
-					<div class="form-control">
-						<label for="add-animal-list-breed">Breed</label>
-						<input type="text" id="add-animal-list-breed" data-role="none" class="form-input">
-					</div>
-				</div>
-				<!-- <div class="modal-foot">
+              <div class="select-parent">
+                <select
+                  data-role="none"
+                  class="form-select"
+                  id="add-animal-list-type"
+                >
+                  <option value="dog">dog</option>
+                  <option value="cat">cat</option>
+                  <option value="rabbit">rabbit</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-control">
+              <label for="add-animal-list-breed">Breed</label>
+              <input
+                type="text"
+                id="add-animal-list-breed"
+                data-role="none"
+                class="form-input"
+              />
+            </div>
+          </div>
+          <!-- <div class="modal-foot">
 					<div class="flex-parent">
 						<div class="flex-child"></div>
 						<div class="flex-none">
@@ -138,252 +203,343 @@
 						</div>
 					</div>
 				</div> -->
-			</form>
-		</div>
-	</section>
+        </form>
+      </div>
+    </section>
 
-<!-- Dog Profile -->
-	<section data-role="page" id="animal-profile-page">
-		<header data-role="header" style="color:white;">
-			<h1>Animal Profile</h1>
-			<div class="btn-row">
-				<ul>
-					<li><a href="#back" data-rel="back"><img class="btn-back" src="img/icon-back.png"></a></li>
-					<li></li>
-					<li><a href="#" data-activate="#edit-animal-modal" class="js-edit-animal"><img class="btn-edit" src="img/icon-edit.png"></a></li>
-				</ul>
-			</div>
-		</header>
-		
-		<div data-role="main">
-			<div class="animal-map">
-				<div class="map"></div>
-			</div>
-			<div class="animal-card">
-				<div class="animal-info"></div>
-				<div class="animal-locations"></div>
-			</div>
-		</div>
-		
-		<!-- Edit Dog -->
-		<div class="modal" id="edit-animal-modal">
-			<div class="modal-back" data-deactivate="#edit-animal-modal"></div>
-			<form class="modal-content" id="edit-animal-form" data-role="none">
-				<div class="modal-head">
-					<div class="flex-parent flex-center">
-						<div class="flex-none">
-							<a href="#" class="btn" style="color:#ffffff;" data-deactivate="#edit-animal-modal">Cancel</a>
-						</div>
-						<div class="flex-child" style="text-align:center">
-							Edit
-						</div>
-						<div class="flex-none">
-							<input type="submit" class="btn-form-edit" value="Done" data-role="none">
-						</div>
-					</div>
-				</div>
-				<div class="modal-body">
-					<div>
-					    <label class="imagepicker imagepicker-replace thumbnail">
-					      <input type='file' id="edit-animal-imagepicker" multiple data-role="none">
-					    </label>
-					</div>
-					<div class="form-control">
-						<label for="edit-animal-name">Name</label>
-						<input type="text" id="edit-animal-name" data-role="none" class="form-input">
-					</div>
-					<div class="form-control">
-						<label for="edit-animal-type">Type</label>
-						<div class="select-parent">
-							<select data-role="none" class="form-select" id="edit-animal-type">
-								<option value="dog">Dog</option>
-								<option value="cat">Cat</option>
-								<option value="rabbit">Rabbit</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-control">
-						<label for="edit-animal-breed">Breed</label>
-						<input type="text" id="edit-animal-breed" data-role="none" class="form-input">
-					</div>
-				</div>
-				
-			</form>
-		</div>
+    <!-- Dog Profile -->
+    <section data-role="page" id="animal-profile-page">
+      <header data-role="header" style="color:white;">
+        <h1>Animal Profile</h1>
+        <div class="btn-row">
+          <ul>
+            <li>
+              <a href="#back" data-rel="back"
+                ><img class="btn-back" src="img/icon-back.png"
+              /></a>
+            </li>
+            <li></li>
+            <li>
+              <a
+                href="#"
+                data-activate="#edit-animal-modal"
+                class="js-edit-animal"
+                ><img class="btn-edit" src="img/icon-edit.png"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </header>
 
-		<!-- Add Location -->
-		<div class="modal" id="add-location-modal">
-			<div class="modal-back" data-deactivate="#add-location-modal"></div>
-			<form class="modal-content" id="add-location-form" data-role="none">
-				<div class="modal-head">
-					<div class="flex-parent flex-center">
-						<div class="flex-none">
-							<a href="#" class="btn" style="color:#ffffff;" data-deactivate="#add-location-modal">Cancel</a>
-						</div>
-						<div class="flex-child" style="text-align:center">
-							Add Location
-						</div>
-						<div class="flex-none">
-							<input type="submit" class="btn-form-add" value="Add" data-role="none">
-						</div>
-					</div>
-				</div>
-				<div class="modal-body">
+      <div data-role="main">
+        <div class="animal-map">
+          <div class="map"></div>
+        </div>
+        <div class="animal-card">
+          <div class="animal-info"></div>
+          <div class="animal-locations"></div>
+        </div>
+      </div>
 
-					<input type="hidden" id="add-location-lat">
-					<input type="hidden" id="add-location-lng">
-					
-					<div class="form-control">
-						<label class="add-location-description" for="add-location-description">Description</label>
-						<textarea id="add-location-description" data-role="none" class="form-textarea"></textarea>
-					</div>
-				</div>
-			</form>
-		</div>
+      <!-- Edit Dog -->
+      <div class="modal" id="edit-animal-modal">
+        <div class="modal-back" data-deactivate="#edit-animal-modal"></div>
+        <form class="modal-content" id="edit-animal-form" data-role="none">
+          <div class="modal-head">
+            <div class="flex-parent flex-center">
+              <div class="flex-none">
+                <a
+                  href="#"
+                  class="btn"
+                  style="color:#ffffff;"
+                  data-deactivate="#edit-animal-modal"
+                  >Cancel</a
+                >
+              </div>
+              <div class="flex-child" style="text-align:center">
+                Edit
+              </div>
+              <div class="flex-none">
+                <input
+                  type="submit"
+                  class="btn-form-edit"
+                  value="Done"
+                  data-role="none"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div>
+              <label class="imagepicker imagepicker-replace thumbnail">
+                <input
+                  type="file"
+                  id="edit-animal-imagepicker"
+                  multiple
+                  data-role="none"
+                />
+              </label>
+            </div>
+            <div class="form-control">
+              <label for="edit-animal-name">Name</label>
+              <input
+                type="text"
+                id="edit-animal-name"
+                data-role="none"
+                class="form-input"
+              />
+            </div>
+            <div class="form-control">
+              <label for="edit-animal-type">Type</label>
+              <div class="select-parent">
+                <select
+                  data-role="none"
+                  class="form-select"
+                  id="edit-animal-type"
+                >
+                  <option value="dog">Dog</option>
+                  <option value="cat">Cat</option>
+                  <option value="rabbit">Rabbit</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-control">
+              <label for="edit-animal-breed">Breed</label>
+              <input
+                type="text"
+                id="edit-animal-breed"
+                data-role="none"
+                class="form-input"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
 
-	</section>
+      <!-- Add Location -->
+      <div class="modal" id="add-location-modal">
+        <div class="modal-back" data-deactivate="#add-location-modal"></div>
+        <form class="modal-content" id="add-location-form" data-role="none">
+          <div class="modal-head">
+            <div class="flex-parent flex-center">
+              <div class="flex-none">
+                <a
+                  href="#"
+                  class="btn"
+                  style="color:#ffffff;"
+                  data-deactivate="#add-location-modal"
+                  >Cancel</a
+                >
+              </div>
+              <div class="flex-child" style="text-align:center">
+                Add Location
+              </div>
+              <div class="flex-none">
+                <input
+                  type="submit"
+                  class="btn-form-add"
+                  value="Add"
+                  data-role="none"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" id="add-location-lat" />
+            <input type="hidden" id="add-location-lng" />
 
-<!-- User -->
-	<section data-role="page" id="profile-page">
-		<header data-role="header" style="color:white;">
-			<h1>Profile</h1>
-			<div class="btn-row">
-				<ul>
-					<li><a href="#" data-activate="#edit-user-modal" class="js-edit-user"><img class="btn-edit" src="img/icon-edit.png"></a></li>
-					<li></li>
-					<li><a href="#" class="js-logout"><img class="btn-logout" src="img/icon-logout.png"></a></li>
-					
-				</ul>
-			</div>
-		</header>
-		<footer data-role="footer" data-template="#footer-template"></footer>
-		<div data-role="main">
-		</div>
+            <div class="form-control">
+              <label
+                class="add-location-description"
+                for="add-location-description"
+                >Description</label
+              >
+              <textarea
+                id="add-location-description"
+                data-role="none"
+                class="form-textarea"
+              ></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
 
-		<!-- Edit User Profile -->
-		<div class="modal" id="edit-user-modal">
-			<div class="modal-back" data-deactivate="#edit-user-modal"></div>
-			<form class="modal-content" id="edit-user-form" data-role="none">
-				<div class="modal-head">
-					<div class="flex-parent flex-center">
-						<div class="flex-none">
-							<a href="#" class="btn" style="color:#ffffff;" data-deactivate="#edit-user-modal">Cancel</a>
-						</div>
-						<div class="flex-child" style="text-align:center; color:#ffffff;">
-							Edit
-						</div>
-						<div class="flex-none">
-							<input type="submit" class="btn-form-edit" value="Done" data-role="none">
-						</div>
-					</div>
-				</div>
-				<div class="modal-body">
-					<div>
-					    <label class="imagepicker imagepicker-replace thumbnail">
-					      <input type='file' id="edit-user-imagepicker" multiple data-role="none">
-					    </label>
-					</div>
-					<div class="form-control">
-						<label for="edit-user-name">Name</label>
-						<input type="text" id="edit-user-name" data-role="none" class="form-input">
-						<label for="edit-user-email">Email</label>
-						<input type="text" id="edit-user-email" data-role="none" class="form-input">
-						<label for="edit-user-bio">Bio</label>
-						<input type="text" id="edit-user-bio" data-role="none" class="form-input">
-						<!-- <textarea id="edit-user-bio" data-role="none" class="form-textarea bio-textarea"></textarea> -->
-					</div>
-				</div>
-			</form>
-		</div>
-	</section>
+    <!-- User -->
+    <section data-role="page" id="profile-page">
+      <header data-role="header" style="color:white;">
+        <h1>Profile</h1>
+        <div class="btn-row">
+          <ul>
+            <li>
+              <a href="#" data-activate="#edit-user-modal" class="js-edit-user"
+                ><img class="btn-edit" src="img/icon-edit.png"
+              /></a>
+            </li>
+            <li></li>
+            <li>
+              <a href="#" class="js-logout"
+                ><img class="btn-logout" src="img/icon-logout.png"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <footer data-role="footer" data-template="#footer-template"></footer>
+      <div data-role="main"></div>
 
+      <!-- Edit User Profile -->
+      <div class="modal" id="edit-user-modal">
+        <div class="modal-back" data-deactivate="#edit-user-modal"></div>
+        <form class="modal-content" id="edit-user-form" data-role="none">
+          <div class="modal-head">
+            <div class="flex-parent flex-center">
+              <div class="flex-none">
+                <a
+                  href="#"
+                  class="btn"
+                  style="color:#ffffff;"
+                  data-deactivate="#edit-user-modal"
+                  >Cancel</a
+                >
+              </div>
+              <div class="flex-child" style="text-align:center; color:#ffffff;">
+                Edit
+              </div>
+              <div class="flex-none">
+                <input
+                  type="submit"
+                  class="btn-form-edit"
+                  value="Done"
+                  data-role="none"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div>
+              <label class="imagepicker imagepicker-replace thumbnail">
+                <input
+                  type="file"
+                  id="edit-user-imagepicker"
+                  multiple
+                  data-role="none"
+                />
+              </label>
+            </div>
+            <div class="form-control">
+              <label for="edit-user-name">Name</label>
+              <input
+                type="text"
+                id="edit-user-name"
+                data-role="none"
+                class="form-input"
+              />
+              <label for="edit-user-email">Email</label>
+              <input
+                type="text"
+                id="edit-user-email"
+                data-role="none"
+                class="form-input"
+              />
+              <label for="edit-user-bio">Bio</label>
+              <input
+                type="text"
+                id="edit-user-bio"
+                data-role="none"
+                class="form-input"
+              />
+              <!-- <textarea id="edit-user-bio" data-role="none" class="form-textarea bio-textarea"></textarea> -->
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
 
-<script type="text/template" id="profile-template">
+    <script type="text/template" id="profile-template">
 
-<div class="centered-child profile-info">
-	<div class="form-control centered-text profile-details">
-		<img class="profile-image" src="<%= img %>" alt="">
-		<div class="profile-name"><h3><%= name %></h3></div>
-		<hr class="section-line">
-		<div class="profile-email"><p class="profile-text"><%= email %></p></div>
-		<div class="profile-bio"><p>I'm an enthusiastic animal lover.</p></div>
-	</div>
-</div>
-</script>
+      <div class="centered-child profile-info">
+      	<div class="form-control centered-text profile-details">
+      		<img class="profile-image" src="<%= img %>" alt="">
+      		<div class="profile-name"><h3><%= name %></h3></div>
+      		<hr class="section-line">
+      		<div class="profile-email"><p class="profile-text"><%= email %></p></div>
+      		<div class="profile-bio"><p>I'm an enthusiastic animal lover.</p></div>
+      	</div>
+      </div>
+    </script>
 
-<script type="text/template" id="animal-profile-template">
-<div class="profile-card-wrapper" id="card-toggle">
-	<div class="profile-card" data-toggle="#card-toggle">
-		<div class="animal-top">
-			<img class="animal-profile-image" src="<%= img %>" alt="">
-			<div class="animal-profile-name"><h3><%= name %></h3></div>
-		</div>
+    <script type="text/template" id="animal-profile-template">
+      <div class="profile-card-wrapper" id="card-toggle">
+      	<div class="profile-card" data-toggle="#card-toggle">
+      		<div class="animal-top">
+      			<img class="animal-profile-image" src="<%= img %>" alt="">
+      			<div class="animal-profile-name"><h3><%= name %></h3></div>
+      		</div>
 
-		<div class="animal-details">
-			<dl class="accordion">
-				<dt>Type</dt>
-				<dd><%= type %></dd>
-				<dt>Breed</dt>
-				<dd><%= breed %></dd>
-			</dl>
-		</div>
+      		<div class="animal-details">
+      			<dl class="accordion">
+      				<dt>Type</dt>
+      				<dd><%= type %></dd>
+      				<dt>Breed</dt>
+      				<dd><%= breed %></dd>
+      			</dl>
+      		</div>
 
-		<div class="centered-child form-control btn-delete">
-			<input type="submit" class="btn-text animal-delete" value="DELETE" data-id="<%= id %>" data-role="none">
-		</div>
-		
-	</div>
-</div>
+      		<div class="centered-child form-control btn-delete">
+      			<input type="submit" class="btn-text animal-delete" value="DELETE" data-id="<%= id %>" data-role="none">
+      		</div>
 
-</script>
+      	</div>
+      </div>
+    </script>
 
-<script type="text/template" id="animallist-template">
-<div class="animallist-item animal-jump" data-id="<%= id %>">
-	<div class="flex-parent flex-center">
-		<div class="flex-child animallist-card">
-			<div class="animallist-icon">
-				<img src="<%= img %>" alt="">
-			</div>
-			<div class="animallist-title"><h3 class="animalname"><%= name %></h3></div>
-			<div class="animallist-description"><p><%= type %></p></div>
-		</div>
-	</div>
-</div>
-</script>
+    <script type="text/template" id="animallist-template">
+      <div class="animallist-item animal-jump" data-id="<%= id %>">
+      	<div class="flex-parent flex-center">
+      		<div class="flex-child animallist-card">
+      			<div class="animallist-icon">
+      				<img src="<%= img %>" alt="">
+      			</div>
+      			<div class="animallist-title"><h3 class="animalname"><%= name %></h3></div>
+      			<div class="animallist-description"><p><%= type %></p></div>
+      		</div>
+      	</div>
+      </div>
+    </script>
 
+    <script type="text/template" id="footer-template">
+      <div class="btn-row">
+      	<!-- ul>li*3>a[href=#]>{Link} -->
+      	<ul>
+      		<li class="flex-child">
+      			<a href="#map-page" class="nav-map" data-activate=".nav-map" data-deactivate=".nav-list,.nav-profile">
+      				<div class="btn-icon"><img src="img/icon-map.png" alt=""></div>
+      			</a>
+      		</li>
+      		<li class="flex-child">
+      			<a href="#list-page" class="nav-list" data-activate=".nav-list" data-deactivate=".nav-map,.nav-profile">
+      				<div class="btn-icon"><img src="img/icon-list.png" alt=""></div>
+      			</a>
+      		</li>
+       		<li class="flex-child">
+      			<a href="#profile-page" class="nav-profile" data-activate=".nav-profile" data-deactivate=".nav-list,.nav-map">
+      				<div class="btn-icon"><img src="img/icon-profile.png" alt=""></div>
+      			</a>
+      		</li>
+      	</ul>
+      </div>
+    </script>
 
-<script type="text/template" id="footer-template">
-<div class="btn-row">
-	<!-- ul>li*3>a[href=#]>{Link} -->
-	<ul>
-		<li class="flex-child">
-			<a href="#map-page" class="nav-map" data-activate=".nav-map" data-deactivate=".nav-list,.nav-profile">
-				<div class="btn-icon"><img src="img/icon-map.png" alt=""></div>
-			</a>
-		</li>
-		<li class="flex-child">
-			<a href="#list-page" class="nav-list" data-activate=".nav-list" data-deactivate=".nav-map,.nav-profile">
-				<div class="btn-icon"><img src="img/icon-list.png" alt=""></div>
-			</a>
-		</li>
- 		<li class="flex-child">
-			<a href="#profile-page" class="nav-profile" data-activate=".nav-profile" data-deactivate=".nav-list,.nav-map">
-				<div class="btn-icon"><img src="img/icon-profile.png" alt=""></div>
-			</a>
-		</li>
-	</ul>
-</div>
-</script>
-
-<script type="text/template" id="map-animal-template">
-<div class="flex-parent map-animal-info">
-	<img class="flex-child animal-marker-image" src="<%= img %>" alt="">
-	<div class="flex-child map-animal-details">
-		<h4 class="nonwhite"><%= name %></h4>
-		<p class="map-animal-breed"><%= breed %></p>
-		<a href="#animal-profile-page" class="btn-visit animal-jump"  style="color: #ff6b6b;" data-id="<%= id %>">More</a>
-	</div>
-</div>
-</script>
-</body>
+    <script type="text/template" id="map-animal-template">
+      <div class="flex-parent map-animal-info">
+      	<img class="flex-child animal-marker-image" src="<%= img %>" alt="">
+      	<div class="flex-child map-animal-details">
+      		<h4 class="nonwhite"><%= name %></h4>
+      		<p class="map-animal-breed"><%= breed %></p>
+      		<a href="#animal-profile-page" class="btn-visit animal-jump"  style="color: #ff6b6b;" data-id="<%= id %>">More</a>
+      	</div>
+      </div>
+    </script>
+  </body>
 </html>

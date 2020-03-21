@@ -1,7 +1,5 @@
 /* Ham Apptools created by Hamilton Cline http://hamiltondraws.com */
 
-
-
 /* 
 This function takes an array of objects, 
 stamps each object onto a template string function, 
@@ -18,14 +16,14 @@ showDataList(
 Return:
 `<div>10 x 10</div><div>20 x 5</div>`
 */
-function showDataList(object_array,template_string,target_selector){
-	var output = "";
-	var template_function = makeDataTemplate(template_string);
-	for(let i in object_array) {
-		output += template_function(object_array[i]);
-	}
-	if(!target_selector) return output;
-	else document.querySelector(target_selector).innerHTML = output;
+function showDataList(object_array, template_string, target_selector) {
+  var output = ""
+  var template_function = makeDataTemplate(template_string)
+  for (let i in object_array) {
+    output += template_function(object_array[i])
+  }
+  if (!target_selector) return output
+  else document.querySelector(target_selector).innerHTML = output
 }
 /*
 This function takes a template_string using <%= %> style templates
@@ -38,29 +36,35 @@ var output = fn({name:"George"});
 Return:
 `Name: George`
 */
-function makeDataTemplate(template_string){
-	return function(data) {
-		var output = template_string.toString(),rep = /<%=\s*(.+?)\s*%>/,m,v,s;
-		while(m = rep.exec(output)) {
-			s = m[1].split(":");
-			v = fetchFromObject(data,s[0]);
-			output = m.input.substr(0,m.index)+
-			(v!==undefined?v:(s[1]===undefined?"[undefined]":s[1]))+
-			m.input.substr(m[0].length+m.index);
-		}
-		return output;
-	}
+function makeDataTemplate(template_string) {
+  return function(data) {
+    var output = template_string.toString(),
+      rep = /<%=\s*(.+?)\s*%>/,
+      m,
+      v,
+      s
+    while ((m = rep.exec(output))) {
+      s = m[1].split(":")
+      v = fetchFromObject(data, s[0])
+      output =
+        m.input.substr(0, m.index) +
+        (v !== undefined ? v : s[1] === undefined ? "[undefined]" : s[1]) +
+        m.input.substr(m[0].length + m.index)
+    }
+    return output
+  }
 }
 // https://stackoverflow.com/questions/4255472/javascript-object-access-variable-property-by-name-as-string#answer-26407251
 function fetchFromObject(obj, prop) {
-    if(typeof obj === 'undefined') return false;
-    var _index = prop.indexOf('.')
-    if(_index > -1) return fetchFromObject(obj[prop.substring(0, _index)], prop.substr(_index + 1));
-    return obj[prop];
+  if (typeof obj === "undefined") return false
+  var _index = prop.indexOf(".")
+  if (_index > -1)
+    return fetchFromObject(
+      obj[prop.substring(0, _index)],
+      prop.substr(_index + 1)
+    )
+  return obj[prop]
 }
-
-
-
 
 /*
 This function takes an array of objects,
@@ -78,18 +82,15 @@ searchDataList(
 Return:
 [{name:'George',email:'george@gmail.com'}]
 */
-function searchDataList(object_array,search_string,search_properties,fn){
-	return object_array.filter(obj=>{
-		for(let i in search_properties) {
-			if(RegExp(search_string,'i').test(obj[search_properties[i]])) return true;
-		}
-		return false;
-	});
+function searchDataList(object_array, search_string, search_properties, fn) {
+  return object_array.filter(obj => {
+    for (let i in search_properties) {
+      if (RegExp(search_string, "i").test(obj[search_properties[i]]))
+        return true
+    }
+    return false
+  })
 }
-
-
-
-
 
 /*
 This function waits for an array to have some elements,
@@ -101,20 +102,15 @@ function fooFunction(){
 	// some code
 }
 */
-function waitForData(object_array,callback_function,passthrough_arguments){
-	if(!object_array || !object_array.length) {
-		setTimeout(function(){
-			callback_function.apply(this,passthrough_arguments);
-		},150);
-		return false;
-	}
-	return true;
+function waitForData(object_array, callback_function, passthrough_arguments) {
+  if (!object_array || !object_array.length) {
+    setTimeout(function() {
+      callback_function.apply(this, passthrough_arguments)
+    }, 150)
+    return false
+  }
+  return true
 }
-
-
-
-
-
 
 /*
 This function will recursively call itself until a list of files has been loaded into a page with javascript,
@@ -127,14 +123,14 @@ $("input[type='file']").on("change",function() {
   readFiles(this.files, function(e){ $(".output").attr({src:e.target.result}); });
 });
 */
-function readFiles(files,callback,index=0) {
+function readFiles(files, callback, index = 0) {
   if (files && files[0]) {
     let file = files[index++],
-        reader = new FileReader();
-    reader.onload = function(e){
-      callback(e);
-      if(index<files.length) readFiles(files,callback,index);
+      reader = new FileReader()
+    reader.onload = function(e) {
+      callback(e)
+      if (index < files.length) readFiles(files, callback, index)
     }
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(file)
   }
 }

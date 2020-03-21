@@ -1,118 +1,118 @@
-.window_1{
-	width: 100%; 
-	height: 60vh;
-	background-color: #FFFBF5;
-	background-image: url(../img/projects/theglasses/theglasses_hero.jpg);
-	background-repeat: no-repeat;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	background-size: cover;
-	-o-background-size: cover;
-	background-position:center;
+.window_1 {
+  width: 100%;
+  height: 60vh;
+  background-color: #fffbf5;
+  background-image: url(../img/projects/theglasses/theglasses_hero.jpg);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
 }
-.project_info{
-	width: 100%;
-	text-align: center;
+.project_info {
+  width: 100%;
+  text-align: center;
 }
-.logi_color{
-	color: #f9606f;
+.logi_color {
+  color: #f9606f;
 }
-.project_img{
-	width: 100%;
-	height: 100%;
-	display: block;
+.project_img {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
-.role{
-	padding-left: 140px;
+.role {
+  padding-left: 140px;
 }
-.button_space{
-	text-align: center;
+.button_space {
+  text-align: center;
 }
-.right_content_space{
-	padding-left: 30px;
+.right_content_space {
+  padding-left: 30px;
 }
-.inno_img{
-	width: 96%;
-	height: 100%;
-	max-width: 300px;
+.inno_img {
+  width: 96%;
+  height: 100%;
+  max-width: 300px;
 }
-.persona_img{
-	width: 200px;
-	height: 200px;
+.persona_img {
+  width: 200px;
+  height: 200px;
 }
-.persona_detail{
-	padding-top: 0px;	
+.persona_detail {
+  padding-top: 0px;
 }
-.s_img{
-	width: 180px;
-	height: 90%;
-	max-width: 200px;
+.s_img {
+  width: 180px;
+  height: 90%;
+  max-width: 200px;
 }
-.storyboard{
-	background-color: white;
-	/*box-shadow: 0px 5px 18px 0px rgba(0,0,0,0.1); */
+.storyboard {
+  background-color: white;
+  /*box-shadow: 0px 5px 18px 0px rgba(0,0,0,0.1); */
 }
-.final_img{
-	width: 90%;
-	height: 100%;
-	max-width: 400px;
+.final_img {
+  width: 90%;
+  height: 100%;
+  max-width: 400px;
 }
-.style_img{
-	width: 90%;
-	max-width: 500px;
+.style_img {
+  width: 90%;
+  max-width: 500px;
 }
-.final_desktop_img{
-	display: block;
+.final_desktop_img {
+  display: block;
 }
-.final_mobile_img{
-	display: none;
+.final_mobile_img {
+  display: none;
 }
-.prototype_desktop{
-	display: block;
+.prototype_desktop {
+  display: block;
 }
-.prototype_mobile{
-	display: none;
-}
-
-/*tabs*/ 
-main{
-	width: 100%;
-	background: #f3f3f3;
+.prototype_mobile {
+  display: none;
 }
 
-section{
-	display: none;
-	border-top: 2px solid #00b8fc;
-	background-color: #fff;
-	box-shadow: 0px 5px 18px 0px rgba(0,0,0,0.1);
+/*tabs*/
+main {
+  width: 100%;
+  background: #f3f3f3;
 }
 
-input{
-	display: none;
+section {
+  display: none;
+  border-top: 2px solid #00b8fc;
+  background-color: #fff;
+  box-shadow: 0px 5px 18px 0px rgba(0, 0, 0, 0.1);
 }
 
-.tab_label{
-	display: inline-block;
-	margin: 0 0 -1px;
-	padding: 15px 25px;
-	width: 33.05%;
-	font-weight: 600;
-	text-align: center;
-	border: 1px solid transparent;
+input {
+  display: none;
 }
 
-.tab_label:before{
-	margin-right: 10px;
+.tab_label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  width: 33.05%;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid transparent;
 }
 
-.tab_label:hover{
-	color: #00b8fc;
-	cursor: pointer;
+.tab_label:before {
+  margin-right: 10px;
 }
 
-input:checked + .tab_label{
-	color: #fff;
-	background-color: #00b8fc;
+.tab_label:hover {
+  color: #00b8fc;
+  cursor: pointer;
+}
+
+input:checked + .tab_label {
+  color: #fff;
+  background-color: #00b8fc;
 }
 
 #tab1:checked ~ #content1,
@@ -120,83 +120,81 @@ input:checked + .tab_label{
 #tab3:checked ~ #content3,
 #tab4:checked ~ #content4,
 #tab5:checked ~ #content5,
-#tab6:checked ~ #content6{
-	display: block;
+#tab6:checked ~ #content6 {
+  display: block;
 }
 
-.tab_content{
-	padding: 40px;
+.tab_content {
+  padding: 40px;
 }
 
 /*Responsive*/
-@media only screen and ( max-width: 1700px) {
-	.window_1{
-		height: 70vh;
-	}
+@media only screen and (max-width: 1700px) {
+  .window_1 {
+    height: 70vh;
+  }
 }
-@media only screen and ( max-width: 1100px) {
-
+@media only screen and (max-width: 1100px) {
 }
-@media only screen and ( max-width: 800px) {
-	.role{
-		padding-left: 60px;
-	}
-	.window_1{
-		height: 60vh;
-	}
-	.persona_detail{
-		padding-left: 20px;	
-	}
-	.tab_label{
-		width: 32.95%;
-	}
-	.tab_label:before {
-		margin: 0;
-	}
+@media only screen and (max-width: 800px) {
+  .role {
+    padding-left: 60px;
+  }
+  .window_1 {
+    height: 60vh;
+  }
+  .persona_detail {
+    padding-left: 20px;
+  }
+  .tab_label {
+    width: 32.95%;
+  }
+  .tab_label:before {
+    margin: 0;
+  }
 }
-@media only screen and ( max-width: 600px) {
-	.role{
-		padding-left: 0px;
-	}
-	.right_content_space{
-		padding-left: 0px;
-		padding-top: 30px;
-	}
-	.persona_detail{
-		padding-left: 0px;	
-		padding-top: 20px;	
-	}
-	.final_desktop_img{
-		display: none;
-	}
-	.final_mobile_img{
-		display: block;
-	}
-	.prototype_desktop{
-		display: none;
-	}
-	.prototype_mobile{
-		display: block;
-	}
-	.tab_label {
-		padding: 15px;
-	}
-	.tab_label{
-		width: 32.6%;
-	}
-	.tab_content{
-		padding: 30px;
-	}
-	.inno_img{
-		padding-top: 20px;
-		width: 100%;
-	}
+@media only screen and (max-width: 600px) {
+  .role {
+    padding-left: 0px;
+  }
+  .right_content_space {
+    padding-left: 0px;
+    padding-top: 30px;
+  }
+  .persona_detail {
+    padding-left: 0px;
+    padding-top: 20px;
+  }
+  .final_desktop_img {
+    display: none;
+  }
+  .final_mobile_img {
+    display: block;
+  }
+  .prototype_desktop {
+    display: none;
+  }
+  .prototype_mobile {
+    display: block;
+  }
+  .tab_label {
+    padding: 15px;
+  }
+  .tab_label {
+    width: 32.6%;
+  }
+  .tab_content {
+    padding: 30px;
+  }
+  .inno_img {
+    padding-top: 20px;
+    width: 100%;
+  }
 }
-@media only screen and ( max-width: 380px) {
-	.tab_label{
-		width: 32.5%;
-	}
+@media only screen and (max-width: 380px) {
+  .tab_label {
+    width: 32.5%;
+  }
 }
-@media only screen and ( max-width: 325px) {
-
+@media only screen and (max-width: 325px) {
 }

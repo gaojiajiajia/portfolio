@@ -1,130 +1,108 @@
-let db = [];
-
-
+let db = []
 
 const checkLoginForm = () => {
-	const username = $("#form-login-username").val();
-	const password = $("#form-login-password").val();
+  const username = $("#form-login-username").val()
+  const password = $("#form-login-password").val()
 
-	const user = db.find(o=>
-		o.username==username &&
-		o.password==password);
+  const user = db.find(o => o.username == username && o.password == password)
 
-	if(user) {
-		sessionStorage.userId = user.id;
-	} else {
-		sessionStorage.removeItem("userId");
-	}
+  if (user) {
+    sessionStorage.userId = user.id
+  } else {
+    sessionStorage.removeItem("userId")
+  }
 
-	checkStorage();
+  checkStorage()
 }
 
 const checkStorage = () => {
-	const allowedpages = ["#page-login","#page-signup",""];
+  const allowedpages = ["#page-login", "#page-signup", ""]
 
-	// Not Logged in
-	if(sessionStorage.userId===undefined) {
-		if(!allowedpages.some(o=>o==location.hash)) {
-			$.mobile.navigate("#page-login");
-		}
-	}
-	// Logged in
-	else {
-		if(allowedpages.some(o=>o==location.hash)) {
-			$.mobile.navigate("#page-map");
-		}
-	}
+  // Not Logged in
+  if (sessionStorage.userId === undefined) {
+    if (!allowedpages.some(o => o == location.hash)) {
+      $.mobile.navigate("#page-login")
+    }
+  }
+  // Logged in
+  else {
+    if (allowedpages.some(o => o == location.hash)) {
+      $.mobile.navigate("#page-map")
+    }
+  }
 }
-
-
-
 
 // HELPERS
 const waitForDB = fn => {
-	if(!db.length) {
-		setTimeout(()=>fn(),150);
-		return false;
-	} return true;
+  if (!db.length) {
+    setTimeout(() => fn(), 150)
+    return false
+  }
+  return true
 }
 
-const getUser = id => db.find(o=>o.id==id);
-const getAnimal = (u,id) => u.animals.find(o=>o.id==id);
+const getUser = id => db.find(o => o.id == id)
+const getAnimal = (u, id) => u.animals.find(o => o.id == id)
 
-const currentUser = () => getUser(sessionStorage.userId);
-const currentAnimal = () => getUser(currentUser(),sessionStorage.animalId);
-
-
-
+const currentUser = () => getUser(sessionStorage.userId)
+const currentAnimal = () => getUser(currentUser(), sessionStorage.animalId)
 
 $.ajax({
-	url:'data/data.json',
-	dataType:'json'
+  url: "data/data.json",
+  dataType: "json"
+}).done(d => {
+  console.log(d)
+  db = d
 })
-.done(d=>{
-	console.log(d);
-	db = d;
-})
-
 
 // Document Ready
-$(()=>{
+$(() => {
+  checkStorage()
 
-	checkStorage();
+  // Event Delegate
+  $(document)
+    .on("pagecontainerbeforeshow", (e, ui) => {
+      console.log(e, ui, ui.toPage[0].id)
 
-	// Event Delegate
-	$(document)
+      switch (ui.toPage[0].id) {
+        case "page-map":
+          // do some code
+          break
+        case "page-list":
+          showListPage()
+          break
+      }
+    })
 
-	.on("pagecontainerbeforeshow",(e,ui)=>{
-		console.log(e, ui, ui.toPage[0].id);
+    // Form Submissions
+    .on("submit", "#form-login", e => {
+      e.preventDefault()
 
-		switch(ui.toPage[0].id) {
-			case "page-map":
-				// do some code
-				break;
-			case "page-list":
-				showListPage();
-				break;
-		}
-	})
+      checkLoginForm()
 
-	// Form Submissions
-	.on("submit","#form-login",e=>{
-		e.preventDefault();
+      e.target.reset()
+      $("#form-login-username")[0].focus()
+    })
 
-		checkLoginForm();
+    // Clicks
+    .on("click", ".js-logout", e => {
+      e.preventDefault()
 
-		e.target.reset();
-		$("#form-login-username")[0].focus();
-	})
+      sessionStorage.removeItem("userId")
+      checkStorage()
+    })
 
-	// Clicks
-	.on("click",".js-logout",e=>{
-		e.preventDefault();
+    .on("click", "[data-activate]", e => {
+      $($(e.target).data("activate")).addClass("active")
+    })
+    .on("click", "[data-deactivate]", e => {
+      $($(e.target).data("deactivate")).removeClass("active")
+    })
+    .on("click", "[data-toggle]", e => {
+      $($(e.target).data("toggle")).toggleClass("active")
+    })
 
-		sessionStorage.removeItem("userId");
-		checkStorage();
-	})
-
-
-
-
-	.on("click","[data-activate]",e=>{
-		$($(e.target).data("activate"))
-			.addClass("active");
-	})
-	.on("click","[data-deactivate]",e=>{
-		$($(e.target).data("deactivate"))
-			.removeClass("active");
-	})
-	.on("click","[data-toggle]",e=>{
-		$($(e.target).data("toggle"))
-			.toggleClass("active");
-	})
-
-
-
-	$("[data-template]").each((i,o)=>{
-		$(o).html( $( $(o).data("template") ).html() );
-	})
-
+  $("[data-template]").each((i, o) => {
+    $(o).html($($(o).data("template")).html())
+  })
 })

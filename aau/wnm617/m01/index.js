@@ -1,35 +1,34 @@
-var slideIndex = 1;
-showSlides(slideIndex);
+var slideIndex = 1
+showSlides(slideIndex)
 
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+  showSlides((slideIndex += n))
 }
 
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+  showSlides((slideIndex = n))
 }
 
 function showSlides(n) {
-  var slides = document.getElementsByClassName("myslides");
-  console.log( slides );
+  var slides = document.getElementsByClassName("myslides")
+  console.log(slides)
 
+  var dots = document.getElementsByClassName("dot")
 
-  var dots   = document.getElementsByClassName("dot");
-
-  if ( n > slides.length ) {
+  if (n > slides.length) {
     slideIndex = 1
-  }    
-  if ( n < 1 ) {
+  }
+  if (n < 1) {
     slideIndex = slides.length
   }
 
-  for ( var i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
+  for (var i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none"
   }
-  for ( var i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+  for (var i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "")
   }
 
-  slides[slideIndex-1].style.display  = "block";  
-  dots[slideIndex-1].className       += " active";
+  slides[slideIndex - 1].style.display = "block"
+  dots[slideIndex - 1].className += " active"
 }

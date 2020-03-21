@@ -1,5 +1,3 @@
-
-
 // function templater(tf) {
 // 	return function(oa) {
 // 	}
@@ -8,16 +6,18 @@
 // Currying
 // tf = templatefunction, oa = objectarray
 const templater = tf => oa =>
-	(Array.isArray(oa)?oa:[oa])
-	.reduce((r,o,i,a)=>r+tf(o,i,a),'');
+  (Array.isArray(oa) ? oa : [oa]).reduce((r, o, i, a) => r + tf(o, i, a), "")
 
 // javascript backtick template literals
-const makeUserList = templater(o=>`
+const makeUserList = templater(
+  o => `
 	<div class="user">
 		<div class="user-name">${o.name}</div>
 	</div>
-`);
-const makeAnimalList = templater(o=>`
+`
+)
+const makeAnimalList = templater(
+  o => `
 
 	      <a href="#dog_page-profile" data-id="${o.id}">
             <div class="card_list flex-parent flex-align-center animal-jump" data-id="${o.id}">
@@ -32,16 +32,19 @@ const makeAnimalList = templater(o=>`
                               
             </div>
           </a>
-`);
-const makeLocationsList = templater(o=>`
+`
+)
+const makeLocationsList = templater(
+  o => `
 	<div class="location" style="padding-left:1em">
 		${o.lat} x ${o.lng}
 	</div>
-`);
-
+`
+)
 
 // single dog profile---------------------------------------------------------------------------------------------
-const makeAnimalProfile = templater(o=>`
+const makeAnimalProfile = templater(
+  o => `
 
 	            <div class="flex-wrap fill-parent-height">
                     <div class="dog_single_profile">
@@ -49,29 +52,36 @@ const makeAnimalProfile = templater(o=>`
                             <div>${makeDogProfileImage(o)}</div>
                         </div>
                         <div class="flex-child" style="padding-top: 10px;">
-                            <div class="dog_name" style="text-align:center;">Name: ${o.name}</div>
-                            <div class="dog_breed" style="text-align:center;">Breed: ${o.breed}</div>
-                            <div class="dog_location" style="text-align:center;">Locations: ${o.locations.length}</div>
+                            <div class="dog_name" style="text-align:center;">Name: ${
+                              o.name
+                            }</div>
+                            <div class="dog_breed" style="text-align:center;">Breed: ${
+                              o.breed
+                            }</div>
+                            <div class="dog_location" style="text-align:center;">Locations: ${
+                              o.locations.length
+                            }</div>
                         </div>
                     </div>
                 </div>
-`);
+`
+)
 
-
-	// <div class="flex-parent">
-	// 	<div>${makeProfileImage(o)}</div>
-	// 	<br>
-	// 	<div class="flex-child">
-	// 		<strong>Name: ${o.name}</strong><br>
-	// 		<light>Breed: ${o.breed}</light><br>
-	// 		<light>Size: ${o.size}</light><br>
-	//         <light>Locations: ${o.locations.length}</light><br>
-	// 	</div>
-	// </div>
+// <div class="flex-parent">
+// 	<div>${makeProfileImage(o)}</div>
+// 	<br>
+// 	<div class="flex-child">
+// 		<strong>Name: ${o.name}</strong><br>
+// 		<light>Breed: ${o.breed}</light><br>
+// 		<light>Size: ${o.size}</light><br>
+//         <light>Locations: ${o.locations.length}</light><br>
+// 	</div>
+// </div>
 
 //user profile page connects to HTML------------------------------------------------------------------------------
 
-const makeUserProfile = templater(o=>`
+const makeUserProfile = templater(
+  o => `
 	        
               <div class="avatar">
                 ${makeProfileImage(o)}                
@@ -83,21 +93,26 @@ const makeUserProfile = templater(o=>`
               <a href="#" class="js-logout ui-link" style="color: coral;">Logout</a>
            
 
-`);
+`
+)
 
-const makeProfileImage = templater(o=>`
+const makeProfileImage = templater(
+  o => `
 	<div class="profile-image">
 	<img src="${o.img}"></div>
-`);
+`
+)
 
-const makeDogProfileImage = templater(o=>`
+const makeDogProfileImage = templater(
+  o => `
 	<div class="dog_profile-image">
 	<img src="${o.img}" style="padding-left: 10%;"></div>
-`);
-
+`
+)
 
 // dog details in map page--------------------------------------------------------------------------------------------
-const makeMapInfoTemplate = templater(o=>`
+const makeMapInfoTemplate = templater(
+  o => `
 <div class="flex-parent">
 	<div>
 		<img src="${o.img}" style="width:75px">
@@ -108,9 +123,11 @@ const makeMapInfoTemplate = templater(o=>`
 		<strong>Locations</strong> ${o.locations.length}<br>
 	</div>
 </div>
-`);
+`
+)
 
-const makeAnimalMapInfoTemplate = templater(o=>`
+const makeAnimalMapInfoTemplate = templater(
+  o => `
 <div class="flex-parent">
 	<div>
 		<img src="${o.icon}" style="width:75px">
@@ -119,15 +136,19 @@ const makeAnimalMapInfoTemplate = templater(o=>`
 		<strong>Coordinates</strong> ${o.lat} X ${o.lng}<br>
 	</div>
 </div>
-`);
+`
+)
 
-const makeAnimalSlidesList = templater(o=>`
+const makeAnimalSlidesList = templater(
+  o => `
     <div id="slide">
       <img src=${o.img} class="img_slide" style="width: 60%">
     </div>
-`);
+`
+)
 
-const makeAnimalDropdownList = templater(o=>`
+const makeAnimalDropdownList = templater(
+  o => `
 	<option data-index=${o.scrollIndex} value=${o.id}>${o.breed}</option>
-`);
-
+`
+)

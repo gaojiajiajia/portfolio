@@ -7,114 +7,87 @@
 // 		.html(makeAnimalList(currentUser().animals));
 // }
 
-const showListPage = async (arr) => {
-	await checkData(()=>db.length);
+const showListPage = async arr => {
+  await checkData(() => db.length)
 
-	arr = arr||currentUser().animals;
+  arr = arr || currentUser().animals
 
-	$("#page-list .filterbox")
-		.html(!arr.length?"No animals. Add one?":
-			`<div class="filterlist">
+  $("#page-list .filterbox").html(
+    !arr.length
+      ? "No animals. Add one?"
+      : `<div class="filterlist">
 			<span data-filter="breed" data-value="">All</span> |
-			${makeFilterList(arr,'size')} | 
-			${makeFilterList(arr,'gender')}
-			</div>`)
+			${makeFilterList(arr, "size")} | 
+			${makeFilterList(arr, "gender")}
+			</div>`
+  )
 
-	$("#page-list [data-role='main']")
-		.html(makeAnimalList(currentUser().animals));
+  $("#page-list [data-role='main']").html(makeAnimalList(currentUser().animals))
 }
-
-
-
 
 const showMapPage = async () => {
-	await checkData(()=>db.length);
+  await checkData(() => db.length)
 
-	let locs = currentUser().animals.map((animal)=>{
-		let animalLoc = animal.locations.slice(-1)[0];
-		animalLoc.icon = animal.img;
-		animalLoc.animalId = animal.id;
-		return animalLoc;
-	});
+  let locs = currentUser().animals.map(animal => {
+    let animalLoc = animal.locations.slice(-1)[0]
+    animalLoc.icon = animal.img
+    animalLoc.animalId = animal.id
+    return animalLoc
+  })
 
-	// console.log(db,window.google)
-	showMap(
-		locs,
-		"#page-map .map",
-		t=>{
-			const tm = $(t);
+  // console.log(db,window.google)
+  showMap(locs, "#page-map .map", t => {
+    const tm = $(t)
 
-			tm.data("markers").forEach((o,i)=>{
-				o.addListener("click",e=>{
-					// console.log(o,e);
-					// $("#page-map .menu").addClass("active")
+    tm.data("markers").forEach((o, i) => {
+      o.addListener("click", e => {
+        // console.log(o,e);
+        // $("#page-map .menu").addClass("active")
 
-					tm.data("infoWindow")
-						.setContent(
-							makeMapInfoTemplate(
-								getAnimal(
-									currentUser(),
-									locs[i].animalId
-								)
-							)
-						);
-					tm.data("infoWindow")
-						.open(tm[0],o)
-				});
-			});
-		}
-	);
+        tm.data("infoWindow").setContent(
+          makeMapInfoTemplate(getAnimal(currentUser(), locs[i].animalId))
+        )
+        tm.data("infoWindow").open(tm[0], o)
+      })
+    })
+  })
 }
 
-
 const showAnimalProfilePage = async () => {
-	await checkData(()=>db.length);
+  await checkData(() => db.length)
 
-	$("#dog_page-profile h1")
-		.html(currentAnimal().name);
-		
-	$("#dog_page-profile .dog-profile-top")
-		.html(makeAnimalProfile(currentAnimal()));
+  $("#dog_page-profile h1").html(currentAnimal().name)
 
-	let locs = currentAnimal().locations.map((location)=>{
-		let animalLoc = location;
-		animalLoc.icon = currentAnimal().img;
-		animalLoc.animalId = currentAnimal().id;
-		return animalLoc;
-	});
+  $("#dog_page-profile .dog-profile-top").html(
+    makeAnimalProfile(currentAnimal())
+  )
 
-	showMap(
-		locs,
-		"#dog_page-profile .map",
-		t=>{
-			const tm = $(t);
+  let locs = currentAnimal().locations.map(location => {
+    let animalLoc = location
+    animalLoc.icon = currentAnimal().img
+    animalLoc.animalId = currentAnimal().id
+    return animalLoc
+  })
 
-			tm.data("markers").forEach((o,i)=>{
-				o.addListener("click",e=>{
-					// console.log(o,e);
-					// $("#page-map .menu").addClass("active")
-					tm.data("infoWindow")
-						.setContent(
-							makeAnimalMapInfoTemplate(
-								locs[i]
-							)
-						);
-					tm.data("infoWindow")
-						.open(tm[0],o)
-				});
-			});
-		}
-	);
+  showMap(locs, "#dog_page-profile .map", t => {
+    const tm = $(t)
+
+    tm.data("markers").forEach((o, i) => {
+      o.addListener("click", e => {
+        // console.log(o,e);
+        // $("#page-map .menu").addClass("active")
+        tm.data("infoWindow").setContent(makeAnimalMapInfoTemplate(locs[i]))
+        tm.data("infoWindow").open(tm[0], o)
+      })
+    })
+  })
 }
 
 const showUserProfilePage = async () => {
-	await checkData(()=>db.length);
+  await checkData(() => db.length)
 
-	$(".user-profile")
-		.html(makeUserProfile(currentUser()));
+  $(".user-profile").html(makeUserProfile(currentUser()))
 }
-
-
 
 // const showMapPage = async () => {
 //     // if(!waitForDB(showMapPage)) return false;
@@ -173,12 +146,8 @@ const showUserProfilePage = async () => {
 //     );
 // }
 
-
-
-
 // const showAnimalProfilePage = async () => {
 //     await checkData(()=>db.length);
-
 
 //     $("#page-animal-profile .animal-profile-top")
 //         .html(makeAnimalProfile(currentAnimal()));
@@ -205,9 +174,6 @@ const showUserProfilePage = async () => {
 //         }
 //     );
 // }
-
-
-
 
 // const showUserProfilePage = async () => {
 //     await checkData(()=>db.length);

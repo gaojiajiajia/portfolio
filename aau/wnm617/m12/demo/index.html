@@ -1,231 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>jQuery Mobile Demo</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery Mobile Demo</title>
 
-	<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
 
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0"
+    />
 
-	<link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
-	<link rel="stylesheet" href="css/app.css">
+    <link
+      rel="stylesheet"
+      href="lib/css/jquery.mobile.structure-1.4.5.min.css"
+    />
+    <link rel="stylesheet" href="css/app.css" />
 
-	<script src="lib/js/jquery-2.2.4.min.js"></script>
-	<script src="lib/js/apptools.js"></script>
-	<script src="js/app.js"></script>
-	<script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIkeRx1e95GaidPQgoybWkR-R5PPIjvrk"
-    async defer></script>
-</head>
-<body>
-	
-	<section data-role="page" id="login-page">
-		<div data-role="main">
-			<form id="login-form" class="centered-child" data-role="none">
-				<img src="https://via.placeholder.com/100" alt="">
-				<div class="form-control">
-					<label for="login-username">Username</label>
-					<input type="text" id="login-username" placeholder="User Name" data-role="none">
-				</div>
-				<div class="form-control">
-					<label for="login-password">Password</label>
-					<input type="password" id="login-password" placeholder="Pass Word" data-role="none">
-				</div>
-				<div class="login-alert"></div>
-				<div class="form-control">
-					<label></label>
-					<input type="submit" value="Login" data-role="none">
-				</div>
-			</form>
-		</div>
-	</section>
-	
-	<section data-role="page" id="map-page">
-		<header data-role="header">
-			<h1>Map</h1>
-			
-		</header>
-		<footer data-role="footer" data-template="#footer-template"></footer>
-		<div data-role="main">
-			<div class="map"></div>
-		</div>
-	</section>
+    <script src="lib/js/jquery-2.2.4.min.js"></script>
+    <script src="lib/js/apptools.js"></script>
+    <script src="js/app.js"></script>
+    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIkeRx1e95GaidPQgoybWkR-R5PPIjvrk"
+      async
+      defer
+    ></script>
+  </head>
+  <body>
+    <section data-role="page" id="login-page">
+      <div data-role="main">
+        <form id="login-form" class="centered-child" data-role="none">
+          <img src="https://via.placeholder.com/100" alt="" />
+          <div class="form-control">
+            <label for="login-username">Username</label>
+            <input
+              type="text"
+              id="login-username"
+              placeholder="User Name"
+              data-role="none"
+            />
+          </div>
+          <div class="form-control">
+            <label for="login-password">Password</label>
+            <input
+              type="password"
+              id="login-password"
+              placeholder="Pass Word"
+              data-role="none"
+            />
+          </div>
+          <div class="login-alert"></div>
+          <div class="form-control">
+            <label></label>
+            <input type="submit" value="Login" data-role="none" />
+          </div>
+        </form>
+      </div>
+    </section>
 
-	
-	<section data-role="page" id="list-page">
-		<header data-role="header">
-			<h1>List Page</h1>
-		</header>
-		<footer data-role="footer" data-template="#footer-template"></footer>
-		<div data-role="main">
-			<div class="animallist">
-<!-- 				<div class="animallist-item" data-template="#animallist-template-temporary"></div>
+    <section data-role="page" id="map-page">
+      <header data-role="header">
+        <h1>Map</h1>
+      </header>
+      <footer data-role="footer" data-template="#footer-template"></footer>
+      <div data-role="main">
+        <div class="map"></div>
+      </div>
+    </section>
+
+    <section data-role="page" id="list-page">
+      <header data-role="header">
+        <h1>List Page</h1>
+      </header>
+      <footer data-role="footer" data-template="#footer-template"></footer>
+      <div data-role="main">
+        <div class="animallist">
+          <!-- 				<div class="animallist-item" data-template="#animallist-template-temporary"></div>
 				<div class="animallist-item" data-template="#animallist-template-temporary"></div>
 				<div class="animallist-item" data-template="#animallist-template-temporary"></div>
 				<div class="animallist-item" data-template="#animallist-template-temporary"></div>
 				<div class="animallist-item" data-template="#animallist-template-temporary"></div>
 				<div class="animallist-item" data-template="#animallist-template-temporary"></div>
 				<div class="animallist-item" data-template="#animallist-template-temporary"></div> -->
-			</div>
-		</div>
-	</section>
+        </div>
+      </div>
+    </section>
 
-	
-	<section data-role="page" id="animal-profile-page">
-		<header data-role="header">
-			<h1>Animal Profile Page</h1>
-			<div class="btn-row">
-				<ul>
-					<li><a href="#back" data-rel="back">Back</a></li>
-				</ul>
-			</div>
-			
-		</header>
-		<div data-role="main">
-			<div class="animal-top">
-				<div class="animal-info"></div>
-				<div class="animal-locations"></div>
-			</div>
-			<div class="animal-map">
-				<div class="map"></div>
-			</div>
-		</div>
+    <section data-role="page" id="animal-profile-page">
+      <header data-role="header">
+        <h1>Animal Profile Page</h1>
+        <div class="btn-row">
+          <ul>
+            <li><a href="#back" data-rel="back">Back</a></li>
+          </ul>
+        </div>
+      </header>
+      <div data-role="main">
+        <div class="animal-top">
+          <div class="animal-info"></div>
+          <div class="animal-locations"></div>
+        </div>
+        <div class="animal-map">
+          <div class="map"></div>
+        </div>
+      </div>
 
-		<div class="modal" id="add-location-modal">
-			<div class="modal-back" data-deactivate="#add-location-modal"></div>
-			<form class="modal-content" id="add-location-form" data-role="none">
-				<div class="modal-head">
-					<div class="flex-parent flex-center">
-						<div class="flex-none">
-							<a href="#" class="btn" data-deactivate="#add-location-modal">cancel</a>
-						</div>
-						<div class="flex-child" style="text-align:center">
-							Add Location
-						</div>
-					</div>
-				</div>
-				<div class="modal-body">
+      <div class="modal" id="add-location-modal">
+        <div class="modal-back" data-deactivate="#add-location-modal"></div>
+        <form class="modal-content" id="add-location-form" data-role="none">
+          <div class="modal-head">
+            <div class="flex-parent flex-center">
+              <div class="flex-none">
+                <a href="#" class="btn" data-deactivate="#add-location-modal"
+                  >cancel</a
+                >
+              </div>
+              <div class="flex-child" style="text-align:center">
+                Add Location
+              </div>
+            </div>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" id="add-location-lat" />
+            <input type="hidden" id="add-location-lng" />
 
-					<input type="hidden" id="add-location-lat">
-					<input type="hidden" id="add-location-lng">
-					
-					<div class="form-control">
-						<label for="add-location-description">Description</label>
-						<textarea id="add-location-description" data-role="none" class="form-textarea"></textarea>
-					</div>
-				</div>
-				<div class="modal-foot">
-					<div class="flex-parent">
-						<div class="flex-child"></div>
-						<div class="flex-none">
-							<input type="submit" class="form-button" value="commit" data-role="none">
-						</div>
-					</div>
-				</div>
-			</form>
-		</div>
+            <div class="form-control">
+              <label for="add-location-description">Description</label>
+              <textarea
+                id="add-location-description"
+                data-role="none"
+                class="form-textarea"
+              ></textarea>
+            </div>
+          </div>
+          <div class="modal-foot">
+            <div class="flex-parent">
+              <div class="flex-child"></div>
+              <div class="flex-none">
+                <input
+                  type="submit"
+                  class="form-button"
+                  value="commit"
+                  data-role="none"
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
 
-	</section>
+    <section data-role="page" id="profile-page">
+      <header data-role="header">
+        <h1>Profile Page</h1>
+        <div class="btn-row">
+          <ul>
+            <li><a href="#back" data-rel="back">Back</a></li>
+          </ul>
+        </div>
+      </header>
+      <div data-role="main">
+        Profile
 
-	
-	<section data-role="page" id="profile-page">
-		<header data-role="header">
-			<h1>Profile Page</h1>
-			<div class="btn-row">
-				<ul>
-					<li><a href="#back" data-rel="back">Back</a></li>
-				</ul>
-			</div>
-			
-		</header>
-		<div data-role="main">
-			Profile
+        <br />
+        <a href="#" class="js-logout">Log Out</a>
+      </div>
+    </section>
 
-			<br>
-			<a href="#" class="js-logout">Log Out</a>
-		</div>
-	</section>
+    <script type="text/template" id="profile-template">
+      <div>
+      	<img class="profile-image" src="<%= img %>" alt="">
+      	<div class="profile-name"><%= name %></div>
+      	<div class="profile-type"><%= email %></div>
 
+      	<a href="#" class="js-logout">Log Out</a>
+      </div>
+    </script>
 
-<script type="text/template" id="profile-template">
-<div>
-	<img class="profile-image" src="<%= img %>" alt="">
-	<div class="profile-name"><%= name %></div>
-	<div class="profile-type"><%= email %></div>
+    <script type="text/template" id="animal-profile-template">
+      <img class="animal-image" src="<%= img %>" alt="">
+      <div>
+      	<div class="animal-name"><%= name %></div>
+      	<div class="animal-type"><%= type %></div>
+      	<div class="animal-breed"><%= breed %></div>
+      </div>
+    </script>
 
-	<a href="#" class="js-logout">Log Out</a>
-</div>
-</script>
+    <script type="text/template" id="animallist-template">
+      <div class="animallist-item">
+      	<div class="flex-parent flex-center">
+      		<div class="flex-none animallist-icon">
+      			<img src="<%= img %>" alt="">
+      		</div>
+      		<div class="flex-child">
+      			<div class="animallist-title"><%= name %></div>
+      			<div class="animallist-description"><%= type %></div>
+      		</div>
+      		<div class="flex-none animallist-icon animal-jump" data-id="<%= id %>">
+      			&gt;
+      		</div>
+      	</div>
+      </div>
+    </script>
 
-<script type="text/template" id="animal-profile-template">
-<img class="animal-image" src="<%= img %>" alt="">
-<div>
-	<div class="animal-name"><%= name %></div>
-	<div class="animal-type"><%= type %></div>
-	<div class="animal-breed"><%= breed %></div>
-</div>
-</script>
+    <script type="text/template" id="footer-template">
+      <div class="btn-row">
+      	<!-- ul>li*3>a[href=#]>{Link} -->
+      	<ul>
+      		<li class="flex-child">
+      			<a href="#map-page" class="nav-map" data-activate=".nav-map" data-deactivate=".nav-list,.nav-profile">
+      				<div class="btn-icon"><img src="../../../img/map.svg" alt=""></div>
+      				<div class="btn-title">Maps</div>
+      			</a>
+      		</li>
+      		<li class="flex-child">
+      			<a href="#list-page" class="nav-list" data-activate=".nav-list" data-deactivate=".nav-map,.nav-profile">
+      				<div class="btn-icon"><img src="../../../img/list.svg" alt=""></div>
+      				<div class="btn-title">List</div>
+      			</a>
+      		</li>
+      		<li class="flex-child">
+      			<a href="#profile-page" class="nav-profile" data-activate=".nav-profile" data-deactivate=".nav-list,.nav-map">
+      				<div class="btn-icon"><img src="../../../img/profile.svg" alt=""></div>
+      				<div class="btn-title">Profile</div>
+      			</a>
+      		</li>
+      	</ul>
+      </div>
+    </script>
 
-<script type="text/template" id="animallist-template">
-<div class="animallist-item">
-	<div class="flex-parent flex-center">
-		<div class="flex-none animallist-icon">
-			<img src="<%= img %>" alt="">
-		</div>
-		<div class="flex-child">
-			<div class="animallist-title"><%= name %></div>
-			<div class="animallist-description"><%= type %></div>
-		</div>
-		<div class="flex-none animallist-icon animal-jump" data-id="<%= id %>">
-			&gt;
-		</div>
-	</div>
-</div>
-</script>
-
-
-<script type="text/template" id="footer-template">
-<div class="btn-row">
-	<!-- ul>li*3>a[href=#]>{Link} -->
-	<ul>
-		<li class="flex-child">
-			<a href="#map-page" class="nav-map" data-activate=".nav-map" data-deactivate=".nav-list,.nav-profile">
-				<div class="btn-icon"><img src="../../../img/map.svg" alt=""></div>
-				<div class="btn-title">Maps</div>
-			</a>
-		</li>
-		<li class="flex-child">
-			<a href="#list-page" class="nav-list" data-activate=".nav-list" data-deactivate=".nav-map,.nav-profile">
-				<div class="btn-icon"><img src="../../../img/list.svg" alt=""></div>
-				<div class="btn-title">List</div>
-			</a>
-		</li>
-		<li class="flex-child">
-			<a href="#profile-page" class="nav-profile" data-activate=".nav-profile" data-deactivate=".nav-list,.nav-map">
-				<div class="btn-icon"><img src="../../../img/profile.svg" alt=""></div>
-				<div class="btn-title">Profile</div>
-			</a>
-		</li>
-	</ul>
-</div>
-</script>
-
-<script type="text/template" id="map-animal-template">
-<div class="flex-parent">
-	<div class="flex-none">
-		<img class="animal-image" src="<%= img %>" alt="">
-	</div>
-	<div class="flex-child">
-		<div class="animal-name"><%= name %></div>
-		<div class="animal-type"><%= type %></div>
-		<div class="animal-breed"><%= breed %></div>
-	</div>
-</div>
-<div>
-	<a href="#animal-profile-page" class="btn animal-jump" data-id="<%= id %>">visit</a>
-</div>
-</script>
-
-</body>
+    <script type="text/template" id="map-animal-template">
+      <div class="flex-parent">
+      	<div class="flex-none">
+      		<img class="animal-image" src="<%= img %>" alt="">
+      	</div>
+      	<div class="flex-child">
+      		<div class="animal-name"><%= name %></div>
+      		<div class="animal-type"><%= type %></div>
+      		<div class="animal-breed"><%= breed %></div>
+      	</div>
+      </div>
+      <div>
+      	<a href="#animal-profile-page" class="btn animal-jump" data-id="<%= id %>">visit</a>
+      </div>
+    </script>
+  </body>
 </html>

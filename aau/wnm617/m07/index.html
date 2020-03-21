@@ -1,138 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Chase Cute</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chase Cute</title>
 
-	<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
 
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0"
+    />
 
-	<link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
-	<link rel="stylesheet" href="css/app.css">
+    <link
+      rel="stylesheet"
+      href="lib/css/jquery.mobile.structure-1.4.5.min.css"
+    />
+    <link rel="stylesheet" href="css/app.css" />
 
-	<script src="lib/js/jquery-2.2.4.min.js"></script>
-	<script src="js/app.js"></script>
-	<script src="lib/js/jquery.mobile-1.4.5.min.js"></script> 
-</head>
-<body>    
-	 
-	<section data-role="page" id="login-page">
-		<div data-role="main"> 
-			<form id="login-form" class="centered-child" data-role="none">
-				
-<div class="login_img">
-		<img src="img/logo.png" width="200" height="200">
-	</div>
+    <script src="lib/js/jquery-2.2.4.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+  </head>
+  <body>
+    <section data-role="page" id="login-page">
+      <div data-role="main">
+        <form id="login-form" class="centered-child" data-role="none">
+          <div class="login_img">
+            <img src="img/logo.png" width="200" height="200" />
+          </div>
 
-				<div class="form-control">
-					<label for="login-username">Username</label>
-					<input type="text" id="login-username" placeholder="User Name" data-role="none">
-				</div>
-				<div class="form-control">
-					<label for="login-password">Password</label>
-					<input type="password" id="login-password" placeholder="Pass Word" data-role="none">
-				</div>
-				<div class="form-control">
-					<!-- <label></label> -->
-					<input type="submit" value="Login" data-role="none">
-				</div>
-			</form>
-			<div class="forgot">
-				Forgot Password?
-			</div>
-		</div>
-	</section>
-	
-	<section data-role="page" id="main-page">
-		<header data-role="header">
-			<h1>Main Page</h1>
-			<div class="btn-row">
-				<ul>
-					<li class="flex-child"></li>
-					<li><a  class="list-page-add ui-link" href="#profile-new" data-activate="#add-animal-modal"><img class="addimg" src="img/add.png" width="25" height="25"></a>
-					</li>
-				</ul>
-			</div>
-		</header>
-		<footer data-role="footer" data-template="#footer-template"></footer>
-		<div data-role="main">
+          <div class="form-control">
+            <label for="login-username">Username</label>
+            <input
+              type="text"
+              id="login-username"
+              placeholder="User Name"
+              data-role="none"
+            />
+          </div>
+          <div class="form-control">
+            <label for="login-password">Password</label>
+            <input
+              type="password"
+              id="login-password"
+              placeholder="Pass Word"
+              data-role="none"
+            />
+          </div>
+          <div class="form-control">
+            <!-- <label></label> -->
+            <input type="submit" value="Login" data-role="none" />
+          </div>
+        </form>
+        <div class="forgot">
+          Forgot Password?
+        </div>
+      </div>
+    </section>
 
-			<div class="map-area">
-				<div class="map" data-activate=".map-popover"></div>
-				
-				<div class="map-popover" data-deactivate=".map-popover">
-					<div class="pop-title">British Bulldog</div>
-					<div class="pop-description">Location: 840 Post <br>Trukie</div>
-				</div>
-			</div>
-		</div>
+    <section data-role="page" id="main-page">
+      <header data-role="header">
+        <h1>Main Page</h1>
+        <div class="btn-row">
+          <ul>
+            <li class="flex-child"></li>
+            <li>
+              <a
+                class="list-page-add ui-link"
+                href="#profile-new"
+                data-activate="#add-animal-modal"
+                ><img class="addimg" src="img/add.png" width="25" height="25"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <footer data-role="footer" data-template="#footer-template"></footer>
+      <div data-role="main">
+        <div class="map-area">
+          <div class="map" data-activate=".map-popover"></div>
 
-		<div class="modal" id="add-animal-modal">
-			<div class="modal-back" data-deactivate="#add-animal-modal"></div>
-			<div class="modal-content">
-				<button data-deactivate="#add-animal-modal" class="btn_card">Back</button>
-	    <div class="card_newitem">
-	    	<div class="wrapper">
-				<img src="img/red_stuff.png" width="135" height="135">
-				<div class="name">
-					<h2>Shiba</h2>
-					<!--<p>3 times</p>-->
-				</div>
-			</div>
-	    </div>
-	    <img src="img/map2.png" class="map_big">
-				
-			</div>
-	</div>
-	</section>
+          <div class="map-popover" data-deactivate=".map-popover">
+            <div class="pop-title">British Bulldog</div>
+            <div class="pop-description">Location: 840 Post <br />Trukie</div>
+          </div>
+        </div>
+      </div>
 
-	
-	<section data-role="page" id="list-page">
-		<header data-role="header">
-			<h1>List Page</h1>
-		</header>
-		<footer data-role="footer" data-template="#footer-template"></footer>
-		<div data-role="main">
-			<div class="animallist">
-				<div class="animallist-item" data-template="#animallist-template-temporary"></div>
-				<div class="animallist-item" data-template="#animallist-template-temporary"></div>
-				<div class="animallist-item" data-template="#animallist-template-temporary"></div>
-				<div class="animallist-item" data-template="#animallist-template-temporary"></div>
-				<div class="animallist-item" data-template="#animallist-template-temporary"></div>
-				<div class="animallist-item" data-template="#animallist-template-temporary"></div>
-				<div class="animallist-item" data-template="#animallist-template-temporary"></div>
-			</div>
-		</div>
-	</section>
+      <div class="modal" id="add-animal-modal">
+        <div class="modal-back" data-deactivate="#add-animal-modal"></div>
+        <div class="modal-content">
+          <button data-deactivate="#add-animal-modal" class="btn_card">
+            Back
+          </button>
+          <div class="card_newitem">
+            <div class="wrapper">
+              <img src="img/red_stuff.png" width="135" height="135" />
+              <div class="name">
+                <h2>Shiba</h2>
+                <!--<p>3 times</p>-->
+              </div>
+            </div>
+          </div>
+          <img src="img/map2.png" class="map_big" />
+        </div>
+      </div>
+    </section>
 
-	
-	<section data-role="page" id="animal-profile-page">
-			<div data-role="header" style="overflow:hidden;">
-<h1>Profile</h1>
-    <a href="#list-page" data-icon="gear" class="ui-btn-left">back</a>
-</div>
-		<div data-role="main">
-			<div class="animallist-item" data-template="#animallist-template-temporary"></div>
-		</div>
-	</section>
+    <section data-role="page" id="list-page">
+      <header data-role="header">
+        <h1>List Page</h1>
+      </header>
+      <footer data-role="footer" data-template="#footer-template"></footer>
+      <div data-role="main">
+        <div class="animallist">
+          <div
+            class="animallist-item"
+            data-template="#animallist-template-temporary"
+          ></div>
+          <div
+            class="animallist-item"
+            data-template="#animallist-template-temporary"
+          ></div>
+          <div
+            class="animallist-item"
+            data-template="#animallist-template-temporary"
+          ></div>
+          <div
+            class="animallist-item"
+            data-template="#animallist-template-temporary"
+          ></div>
+          <div
+            class="animallist-item"
+            data-template="#animallist-template-temporary"
+          ></div>
+          <div
+            class="animallist-item"
+            data-template="#animallist-template-temporary"
+          ></div>
+          <div
+            class="animallist-item"
+            data-template="#animallist-template-temporary"
+          ></div>
+        </div>
+      </div>
+    </section>
 
-	
-	<section data-role="page" id="profile-page">
-		<div data-role="header" style="overflow:hidden;">
-<h1>Profile</h1>
-    <a href="#profile-page" data-icon="gear" class="ui-btn-right">edit</a>
-    <a href="#main-page" data-icon="gear" class="ui-btn-left">back</a>
+    <section data-role="page" id="animal-profile-page">
+      <div data-role="header" style="overflow:hidden;">
+        <h1>Profile</h1>
+        <a href="#list-page" data-icon="gear" class="ui-btn-left">back</a>
+      </div>
+      <div data-role="main">
+        <div
+          class="animallist-item"
+          data-template="#animallist-template-temporary"
+        ></div>
+      </div>
+    </section>
 
-    <div data-role="navbar">
-        <ul>
-            <li><a href="#">One</a></li>
-            <li><a href="#">Two</a></li>
-            <li><a href="#">Three</a></li>
-        </ul>
-    </div><!-- /navbar -->
-</div><!-- /header -->
-		<!-- <header data-role="header">
+    <section data-role="page" id="profile-page">
+      <div data-role="header" style="overflow:hidden;">
+        <h1>Profile</h1>
+        <a href="#profile-page" data-icon="gear" class="ui-btn-right">edit</a>
+        <a href="#main-page" data-icon="gear" class="ui-btn-left">back</a>
+
+        <div data-role="navbar">
+          <ul>
+            <li><a href="#">One</a></li>
+            <li><a href="#">Two</a></li>
+            <li><a href="#">Three</a></li>
+          </ul>
+        </div>
+        <!-- /navbar -->
+      </div>
+      <!-- /header -->
+      <!-- <header data-role="header">
 			<h1>Profile Page</h1>
 			<ul class="nav flex-parent">
 				<li class="flex-none">
@@ -147,66 +190,68 @@
 			</ul>
 		</header> -->
 
+      <div data-role="main">
+        <div class="container_profile">
+          <img
+            src="img/retsuku.png"
+            class="profile_img"
+            width="200px"
+            height="200px"
+          />
 
-		<div data-role="main">
-			<div class="container_profile">
-				<img src="img/retsuku.png" class="profile_img" width="200px" height="200px">
+          <br />
+          <h5>Username:</h5>
+          <p>Summer Hall</p>
+          <br />
+          <h5>Email:</h5>
+          <p>summerhall@gmail.com</p>
+          <a href="#" class="js-logout">Log Out</a>
+        </div>
+      </div>
+      <footer data-role="footer" data-template="#footer-template"></footer>
+    </section>
 
-			<br>
-			<h5>Username:</h5><p>Summer Hall</p>
-			<br>
-			<h5>Email:</h5><p>summerhall@gmail.com</p>
-			<a href="#" class="js-logout">Log Out</a> 
-		</div> 
-		</div>
-		<footer data-role="footer" data-template="#footer-template"></footer>
-	</section>
+    <!--add page-->
 
-	<!--add page-->
+    <script type="text/template" id="animallist-template-temporary">
+      <div class="flex-parent flex-center">
+      	<div class="flex-none animallist-icon">
+      		<img src="img/red.png" alt="">
+      	</div>
+      	<div class="flex-child">
+      		<div class="animallist-title">Catpuppy</div>
+      		<div class="animallist-description">French Bulldog</div>
+      	</div>
+      	<div class="flex-none animallist-icon animal-jump">
+      		&gt;
+      	</div>
+      </div>
+    </script>
 
-
-<script type="text/template" id="animallist-template-temporary">
-<div class="flex-parent flex-center">
-	<div class="flex-none animallist-icon">
-		<img src="img/red.png" alt="">
-	</div>
-	<div class="flex-child">
-		<div class="animallist-title">Catpuppy</div>
-		<div class="animallist-description">French Bulldog</div>
-	</div>
-	<div class="flex-none animallist-icon animal-jump">
-		&gt;
-	</div>
-</div>
-</script>
-
-
-
-
-<script type="text/template" id="footer-template">
-<div class="btn-row">
-	<!-- ul>li*3>a[href=#]>{Link} -->
-	<ul>
-		<li class="flex-child">
-			<a href="#main-page" class="nav-map" data-activate=".nav-map" data-deactivate=".nav-list,.nav-profile">
-				<div class="btn-icon"><img src="img/map i.png" alt=""></div>
-				<div class="btn-title">Maps</div>
-			</a>
-		</li>
-		<li class="flex-child">
-			<a href="#list-page" class="nav-list" data-activate=".nav-list" data-deactivate=".nav-map,.nav-profile">
-				<div class="btn-icon"><img src="img/list.png" alt=""></div>
-				<div class="btn-title">List</div>
-			</a>
-		</li>
-		<li class="flex-child">
-			<a href="#profile-page" class="nav-profile" data-activate=".nav-profile" data-deactivate=".nav-list,.nav-map">
-				<div class="btn-icon"><img src="img/profile.png" alt=""></div>
-				<div class="btn-title">Profile</div>
-			</a>
-		</li>
-	</ul>
-</div>
-</script>
-</body>
+    <script type="text/template" id="footer-template">
+      <div class="btn-row">
+      	<!-- ul>li*3>a[href=#]>{Link} -->
+      	<ul>
+      		<li class="flex-child">
+      			<a href="#main-page" class="nav-map" data-activate=".nav-map" data-deactivate=".nav-list,.nav-profile">
+      				<div class="btn-icon"><img src="img/map i.png" alt=""></div>
+      				<div class="btn-title">Maps</div>
+      			</a>
+      		</li>
+      		<li class="flex-child">
+      			<a href="#list-page" class="nav-list" data-activate=".nav-list" data-deactivate=".nav-map,.nav-profile">
+      				<div class="btn-icon"><img src="img/list.png" alt=""></div>
+      				<div class="btn-title">List</div>
+      			</a>
+      		</li>
+      		<li class="flex-child">
+      			<a href="#profile-page" class="nav-profile" data-activate=".nav-profile" data-deactivate=".nav-list,.nav-map">
+      				<div class="btn-icon"><img src="img/profile.png" alt=""></div>
+      				<div class="btn-title">Profile</div>
+      			</a>
+      		</li>
+      	</ul>
+      </div>
+    </script>
+  </body>
 </html>

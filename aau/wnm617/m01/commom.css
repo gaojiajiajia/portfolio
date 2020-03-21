@@ -1,49 +1,47 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|VT323');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|VT323");
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 
 /* Style the body */
 body {
-    font-family: vt323, sans-serif;
-    margin: 0;
+  font-family: vt323, sans-serif;
+  margin: 0;
 }
 
 /* Header/logo Title */
 .header {
-    padding: 80px;
-    text-align: center;
-    background: #a4b5ba;
-    color: white;
+  padding: 80px;
+  text-align: center;
+  background: #a4b5ba;
+  color: white;
 }
 
 /* Increase the font size of the heading */
 .header h1 {
-    font-size: 40px;
+  font-size: 40px;
 }
 /* Style the top navigation bar */
 .navbar {
-    overflow: hidden;
-    background-color: #63a5a7;
+  overflow: hidden;
+  background-color: #63a5a7;
 }
 
 /* Style the navigation bar links */
 .navbar a {
-	/*font-family: "Open Sans", sans-serif;*/
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
+  /*font-family: "Open Sans", sans-serif;*/
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
 }
 /* Change color on hover */
-.navbar a:hover 
-{
-    background-color: #ddd;
-    color: black;
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
 }
 
 /* javascript */
@@ -56,7 +54,8 @@ body {
 }
 
 /* Next & previous buttons */
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -77,8 +76,9 @@ body {
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Caption text */
@@ -113,7 +113,8 @@ body {
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
 
@@ -126,23 +127,35 @@ body {
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
+  .prev,
+  .next,
+  .text {
+    font-size: 11px;
+  }
 }
 /* Footer */
 .footer {
-   font-size: 12px;
-   text-align: right;
-    background: #a4b5ba;
-    padding: 10px 10px;
+  font-size: 12px;
+  text-align: right;
+  background: #a4b5ba;
+  padding: 10px 10px;
 }

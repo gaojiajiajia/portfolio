@@ -1,50 +1,55 @@
-[
-  '{{repeat(5, 7)}}',
+;[
+  "{{repeat(5, 7)}}",
   {
-    id:'{{index()}}',
-    name: '{{firstName()}} {{surname()}}',
-    username:function(){
-      return 'user'+this.id;
+    id: "{{index()}}",
+    name: "{{firstName()}} {{surname()}}",
+    username: function() {
+      return "user" + this.id
     },
-    email:function(){
-      return this.username+'@gmail.com';
+    email: function() {
+      return this.username + "@gmail.com"
     },
-    password:'pass',
-    img:'img/user.png',
-    animals:[
-      '{{repeat(5, 15)}}',
+    password: "pass",
+    img: "img/user.png",
+    animals: [
+      "{{repeat(5, 15)}}",
       {
-        id:'{{index()}}',
-        name:'{{company()}}',
-        type:'{{random("cat", "dog", "rabbit")}}',
-        breed:function(tags){
+        id: "{{index()}}",
+        name: "{{company()}}",
+        type: '{{random("cat", "dog", "rabbit")}}',
+        breed: function(tags) {
           var breeds = {
-            cat:["russian blue","persian cat","ragdoll"],
-            dog:["bulldog","pugdog","chihuahua"],
-            rabbit:["alaskan","angora","chinchilla","cinnamon"]
-          };
-          var breed_array = breeds[this.type];
-          var chosen_index = tags.integer(0,breed_array.length-1);
-          return breed_array[chosen_index];
+            cat: ["russian blue", "persian cat", "ragdoll"],
+            dog: ["bulldog", "pugdog", "chihuahua"],
+            rabbit: ["alaskan", "angora", "chinchilla", "cinnamon"]
+          }
+          var breed_array = breeds[this.type]
+          var chosen_index = tags.integer(0, breed_array.length - 1)
+          return breed_array[chosen_index]
         },
-        img:function(tags) {
-          return 'http://via.placeholder.com/200/'+tags.integer(700,999)+'/fff?				text='+this.name;
+        img: function(tags) {
+          return (
+            "http://via.placeholder.com/200/" +
+            tags.integer(700, 999) +
+            "/fff?				text=" +
+            this.name
+          )
         },
-        locations:[
-           '{{repeat(5, 15)}}',
+        locations: [
+          "{{repeat(5, 15)}}",
           {
-            id:'{{index()}}',
-            lat:'{{floating(37.810505, 37.709773)}}',
-            lng:'{{floating(-122.515744, -122.352199)}}',
-            description:'{{lorem(2,"sentences")}}',
-            date:'{{date(new Date(2018, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss")}}'
+            id: "{{index()}}",
+            lat: "{{floating(37.810505, 37.709773)}}",
+            lng: "{{floating(-122.515744, -122.352199)}}",
+            description: '{{lorem(2,"sentences")}}',
+            date:
+              '{{date(new Date(2018, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss")}}'
           }
         ]
       }
     ]
   }
 ]
-
 
 /*[
   '{{repeat(5, 7)}}',
