@@ -89,7 +89,7 @@ a{
 	text-decoration: none;
 	transition:all 0.3s;
 	cursor: pointer;
-	font-size: 16px; 
+	font-size: 16px;
 	color: #00AEB5;
 
 }
@@ -200,7 +200,7 @@ a:checked{
 	border-right: 5px solid #F8B500;
 	transition: all 0.3s ease;
 	transform: translate3d( 16px, -5px, 0) rotate(-45deg);
-}	
+}
 
 /*Reference: hamburger menu (https://codepen.io/havardob/pen/zZvLgw)*/
 label .menu {
@@ -271,7 +271,7 @@ label input:checked + .menu .hamburger:before {
 	top: 0;
 }
 
-label input:checked + .menu + ul { 
+label input:checked + .menu + ul {
 	opacity: 1;
 	visibility: visible;
 }
@@ -362,10 +362,10 @@ label ul li{
  		 padding-right: 9%;
  	}
  	 	.target2{
-     padding-left: 30px; 
+     padding-left: 30px;
  	}
  	 	 	.target{
-     padding-left: 30px; 
+     padding-left: 30px;
  	}
 }
 @media only screen and ( max-width: 2000px) {
@@ -432,7 +432,7 @@ label ul li{
 	}
 
  	.target{
-     padding-left: 30px; 
+     padding-left: 30px;
  	}
 
  	.target2{
