@@ -54,7 +54,11 @@
   -o-background-size: cover;
   background-position: center;
 }
-
+.color_background{
+  background-color: #000000;
+  background-size: cover;
+  max-width: 100%;
+}
 .project_info {
   width: 100%;
   text-align: center;
@@ -137,7 +141,9 @@
 .s_img {
   height: 23em;
 }
-
+.info_archi{
+  background-color: #000000;
+}
 /*tabs*/
 main {
   width: 100%;
